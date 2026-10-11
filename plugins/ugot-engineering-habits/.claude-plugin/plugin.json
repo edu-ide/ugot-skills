@@ -1,0 +1,11 @@
+{
+  "name": "ugot-engineering-habits",
+  "displayName": "UGOT Engineering Habits",
+  "version": "0.1.0",
+  "description": "Engineering habits for coding agents: build it right the first time, check the latest literature, disclose shortcuts, premortem before claims, use fundamental terms, consult on architecture.",
+  "author": {
+    "name": "UGOT"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/edu-ide/ugot-skills"
+}

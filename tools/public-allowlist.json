@@ -1,0 +1,117 @@
+{
+  "marketplace": {
+    "name": "ugot-skills",
+    "description": "UGOT's open skills for Claude Code and Codex: agent mindset gates, reader-first writing, engineering habits."
+  },
+  "plugins": {
+    "ugot-mindset": {
+      "from": "ugot-mindset",
+      "displayName": "UGOT Mindset",
+      "version": "0.7.6",
+      "description": "How the agent should think and talk with the user: read the intent, verify before claiming, no silent omission, keep going, brief human answers. 19 skills, 2 agents and automatic prompt/result/stop/bash gates.",
+      "skills": [
+        "answer-briefly",
+        "doubt-and-verify",
+        "fundamental-first",
+        "honest-eta",
+        "keep-going",
+        "mistake-review",
+        "multi-axis-thinking",
+        "multi-ruler",
+        "no-silent-omission",
+        "no-waste",
+        "persist-everywhere",
+        "predictability-first",
+        "pro-quality",
+        "question-the-task-first",
+        "read-the-intent",
+        "recall-before-reinvent",
+        "safe-process-control",
+        "speak-human",
+        "sprout-loop"
+      ],
+      "extra": [
+        "hooks",
+        "agents"
+      ]
+    },
+    "ugot-writing": {
+      "from": "ugot-writing-skills",
+      "displayName": "UGOT Writing",
+      "version": "0.1.0",
+      "description": "Reader-first writing (mainly Korean): explain for understanding, style editing, applications, songs and lyrics, story craft, short-form ads.",
+      "skills": [
+        "explain-for-understanding",
+        "korean-style-editor",
+        "question-focused-writing",
+        "write-for-the-reader",
+        "invent-genre-grammar",
+        "compose-topline-melody",
+        "write-convention-breaking-lyrics",
+        "balance-infographic-density",
+        "application-final-approval",
+        "bestseller-product-review",
+        "reels-ad-production"
+      ]
+    },
+    "ugot-engineering-habits": {
+      "from": "ugot-dev-skills",
+      "displayName": "UGOT Engineering Habits",
+      "version": "0.1.0",
+      "description": "Engineering habits for coding agents: build it right the first time, check the latest literature, disclose shortcuts, premortem before claims, use fundamental terms, consult on architecture.",
+      "skills": [
+        "architecture-consultation",
+        "audit-convention-fit",
+        "build-right-the-first-time",
+        "calibrated-architecture-research",
+        "check-latest-literature",
+        "disclose-implementation-fidelity",
+        "model-real-cardinality",
+        "native-architecture-sprint",
+        "precheck-and-premortem",
+        "self-questioning",
+        "use-fundamental-terms"
+      ]
+    },
+    "ugot-career": {
+      "from": "ugot-writing-skills",
+      "displayName": "UGOT Career",
+      "version": "0.1.0",
+      "description": "Job applications for developers who work with AI coding tools: screen postings, dissect requirements, research the company, build a tailored resume and portfolio story, submit and track.",
+      "skills": [],
+      "local_skills": [
+        "apply-for-jobs"
+      ]
+    }
+  },
+  "replace": {},
+  "exclude_files": [
+    "references/local.md",
+    "ugot-writing/skills/write-for-the-reader/references/application-editing-cases.md",
+    "ugot-writing/skills/write-for-the-reader/references/grant-plan-hedging-case.md"
+  ],
+  "overrides": {
+    "ugot-mindset/hooks/launch-gate.py": "c19615f199f059ae942d75a601da7b9b75eee4071993617a47cfea2383e96041",
+    "ugot-mindset/hooks/mindset-gate.py": "e2e9b2b21545cd7f3889f1f976f08587390632d542a2bf55c32bdacc838adfbc",
+    "ugot-mindset/hooks/research-gate.py": "436be1b08fd3df4c7c6d33fcfba41a548b3bf43d5154a0fb6eff3bff66a44c38",
+    "ugot-mindset/skills/answer-briefly/SKILL.md": "7891bb16e93d1ed5fd947e514f82bad7cdcf0556da8dee2e17872c1bc60dabdf",
+    "ugot-mindset/skills/speak-human/SKILL.md": "f1c95f87b11f343eb0f5832135377f5f282544281fc1e8b24cb274be552bf35c",
+    "ugot-mindset/skills/multi-axis-thinking/SKILL.md": "e7f57d7e89bae46b37f46401c957b11eb5de54b9ab45d05abc24d10f5d18bc56",
+    "ugot-mindset/skills/fundamental-first/SKILL.md": "4d3e92e56e1134731a221d82d205d71c1dc261a436d060cfab4a7002a67135e6",
+    "ugot-mindset/skills/multi-ruler/SKILL.md": "c040361fe8111606ca2e65571e4b0d1f201da4a09d935f6e237e7dda74859ace",
+    "ugot-mindset/skills/question-the-task-first/SKILL.md": "8618330b968f7cd521510d7cf752b0e1ae1151890cd9ab08d6a238d0c3c866ce",
+    "ugot-mindset/skills/persist-everywhere/SKILL.md": "604545d6c1a797ec0d76166a4f3eabca1e51929cc1ffd524effc4a5f775f6c02",
+    "ugot-mindset/skills/mistake-review/SKILL.md": "1a50878c485bce30cdfa5a83e2ececd60314d8f97f83185b6c46ef79c873f69a",
+    "ugot-writing/skills/application-final-approval/SKILL.md": "30f764bf5046d0c3c49cd29a10044533f63c01014e7efd488901f6c2f4a0c29b",
+    "ugot-writing/skills/write-for-the-reader/SKILL.md": "ea9f00b094f1e60293f985e13571dc95dc33f28386e19a48cd3c99613de84254",
+    "ugot-writing/skills/write-convention-breaking-lyrics/references/supplied-song-matrix.md": "b0775eaf04bf4644085a6aae42027afd625391302348db5745352fcca2ea7748",
+    "ugot-writing/skills/reels-ad-production/SKILL.md": "6b8faa6bbee52fb41aaa9a2ab4984b53b41be3ff920bbf0514622c666d30b491",
+    "ugot-writing/skills/reels-ad-production/references/observed-reels.md": "60321785e7c6cb95d5a5fdc16859adaf71612ee2c89340e00ed4cdaac5ca2c53",
+    "ugot-writing/skills/reels-ad-production/references/production-workflow.md": "de2211ec4ac8baaa117bcbc247dcebae83f349fdf85bcfa244bdd2975fd8eba9",
+    "ugot-engineering-habits/skills/check-latest-literature/SKILL.md": "40130795866b16ad8668cc065e763b4bd578d90d1e1e654e34d06874e90b98f9",
+    "ugot-engineering-habits/skills/disclose-implementation-fidelity/SKILL.md": "69b3c36f574da2f228c6a17ed813a354fd7289cb355f15c5f05596830196a01c",
+    "ugot-engineering-habits/skills/build-right-the-first-time/SKILL.md": "f4d35dae18ff023bce82d20943977189d4dab8543baabacef69fd1dca07cf9e7",
+    "ugot-engineering-habits/skills/precheck-and-premortem/SKILL.md": "553b89c7eac8374048b5b3f70fb81a4e945751d36c3730037bb5f01e22f986f6",
+    "ugot-engineering-habits/skills/use-fundamental-terms/SKILL.md": "45b5a1125657ea3d278088d3c3344bbfed2b3317562a4560fdf89b250464d4a1"
+  }
+}

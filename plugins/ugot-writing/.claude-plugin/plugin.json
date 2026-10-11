@@ -1,0 +1,11 @@
+{
+  "name": "ugot-writing",
+  "displayName": "UGOT Writing",
+  "version": "0.1.0",
+  "description": "Reader-first writing (mainly Korean): explain for understanding, style editing, applications, songs and lyrics, story craft, short-form ads.",
+  "author": {
+    "name": "UGOT"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/edu-ide/ugot-skills"
+}

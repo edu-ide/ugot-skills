@@ -1,0 +1,11 @@
+{
+  "name": "ugot-mindset",
+  "displayName": "UGOT Mindset",
+  "version": "0.7.6",
+  "description": "How the agent should think and talk with the user: read the intent, verify before claiming, no silent omission, keep going, brief human answers. 19 skills, 2 agents and automatic prompt/result/stop/bash gates.",
+  "author": {
+    "name": "UGOT"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/edu-ide/ugot-skills"
+}

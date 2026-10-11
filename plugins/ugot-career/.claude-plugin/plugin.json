@@ -1,0 +1,11 @@
+{
+  "name": "ugot-career",
+  "displayName": "UGOT Career",
+  "version": "0.1.0",
+  "description": "Job applications for developers who work with AI coding tools: screen postings, dissect requirements, research the company, build a tailored resume and portfolio story, submit and track.",
+  "author": {
+    "name": "UGOT"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/edu-ide/ugot-skills"
+}
