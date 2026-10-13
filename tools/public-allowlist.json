@@ -57,8 +57,8 @@
     "ugot-engineering-habits": {
       "from": "ugot-dev-skills",
       "displayName": "UGOT Engineering Habits",
-      "version": "0.1.0",
-      "description": "Engineering habits for coding agents: build it right the first time, check the latest literature, disclose shortcuts, premortem before claims, use fundamental terms, consult on architecture.",
+      "version": "0.2.0",
+      "description": "Engineering habits for coding agents: build it right the first time, check the latest literature, disclose shortcuts, premortem before claims, use fundamental terms, consult on architecture, separate incident mitigation from the root fix.",
       "skills": [
         "architecture-consultation",
         "audit-convention-fit",
@@ -66,6 +66,7 @@
         "calibrated-architecture-research",
         "check-latest-literature",
         "disclose-implementation-fidelity",
+        "incident-root-fix",
         "model-real-cardinality",
         "native-architecture-sprint",
         "precheck-and-premortem",
@@ -112,6 +113,7 @@
     "ugot-engineering-habits/skills/disclose-implementation-fidelity/SKILL.md": "69b3c36f574da2f228c6a17ed813a354fd7289cb355f15c5f05596830196a01c",
     "ugot-engineering-habits/skills/build-right-the-first-time/SKILL.md": "f4d35dae18ff023bce82d20943977189d4dab8543baabacef69fd1dca07cf9e7",
     "ugot-engineering-habits/skills/precheck-and-premortem/SKILL.md": "553b89c7eac8374048b5b3f70fb81a4e945751d36c3730037bb5f01e22f986f6",
-    "ugot-engineering-habits/skills/use-fundamental-terms/SKILL.md": "45b5a1125657ea3d278088d3c3344bbfed2b3317562a4560fdf89b250464d4a1"
+    "ugot-engineering-habits/skills/use-fundamental-terms/SKILL.md": "45b5a1125657ea3d278088d3c3344bbfed2b3317562a4560fdf89b250464d4a1",
+    "ugot-engineering-habits/skills/incident-root-fix/SKILL.md": "c6f0772173bc7cb55f7e547629457447168d12687f973611823458094fdfc2ae"
   }
 }
