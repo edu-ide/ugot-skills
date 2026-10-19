@@ -22,6 +22,7 @@ import hashlib
 import json
 import re
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -96,6 +97,25 @@ def stage(source_root, local_root):
             out[extra] = src
         staged[plugin] = out
     return staged
+
+
+def refuse_uncommitted(source_root, staged):
+    """Stop when a copied path has uncommitted or untracked changes.
+
+    The public cut must come from reviewed, committed source. Another session's
+    work in progress in the private tree is not reviewed (2026-10-19: a WIP
+    principle binding reached the public repo this way).
+    """
+    paths = sorted({str(src.relative_to(source_root)) for entries in staged.values()
+                    for src in entries.values() if src.is_relative_to(source_root)})
+    out = subprocess.run(["git", "-C", str(source_root), "status", "--porcelain", "--", *paths],
+                         capture_output=True, text=True)
+    if out.returncode != 0:
+        raise SystemExit(f"cannot read git status of {source_root}: {out.stderr.strip()}")
+    dirty = [l for l in out.stdout.splitlines() if l.strip()]
+    if dirty:
+        raise SystemExit("private source has uncommitted changes in copied paths; sync from a clean "
+                         "export of HEAD instead (git archive HEAD | tar -x -C <dir>):\n" + "\n".join(dirty))
 
 
 def scan_and_copy(staged, dry_run):
@@ -187,7 +207,13 @@ if __name__ == "__main__":
     args = [a for a in argv if not a.startswith("--")]
     if len(args) != 1:
         raise SystemExit(__doc__)
-    staged = stage(Path(args[0]).resolve(), local_root)
+    source = Path(args[0]).resolve()
+    staged = stage(source, local_root)
+    if (source / ".git").exists():
+        refuse_uncommitted(source, staged)
     scan_and_copy(staged, dry_run="--check" in sys.argv)
     if "--check" not in sys.argv:
         write_manifests()
+        layers = subprocess.run([sys.executable, str(ROOT / "tools" / "check_layers.py")])
+        if layers.returncode != 0:
+            raise SystemExit("layer check failed: fix the binding in the private source, then sync again")

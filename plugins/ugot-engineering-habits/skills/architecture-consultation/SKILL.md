@@ -6,7 +6,7 @@ contract:
   procedure: "숨은 가정·층별 제약을 반례로 검토 → 구현·실험 결정으로 연결"
   exit_check: "반례 목록과 그에 따른 결정이 기록됐다"
   evidence: "협의 기록 문서"
-principle: brainstorm-first
+principle: doubt-and-verify
 ---
 
 # AI 아키텍처 설계 협의
