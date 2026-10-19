@@ -1,6 +1,7 @@
 ---
 name: calibrated-architecture-research
-description: Improve the predictability of language-model architecture research by calibrating cheap experiments against completed runs, checking control learnability, and choosing bounded discriminating experiments from primary papers. Use for one-day architecture research, repeated inconclusive pilots, early-performance prediction, scaling forecasts, or requests to raise research success probability. Does not promise a frontier model or replace implementation and real capability evaluation.
+description: "Improve the predictability of language-model architecture research by calibrating cheap experiments against completed runs, checking control learnability, and choosing bounded discriminating experiments from primary papers. Use for one-day architecture research, repeated inconclusive pilots, early-performance prediction, scaling forecasts, or requests to raise research success probability."
+principle: predictability-first
 ---
 
 # Calibrated architecture research
@@ -152,3 +153,7 @@ target-scale verified**. A skill validation or synthetic fixture verifies only
 the tool/workflow behavior. It does not measure better research success rates.
 Report the next deciding gate and its resource cap separately from any ETA.
 Do not update personal memories unless explicitly requested.
+
+## 유래·사례 (description에서 이동, 2026-10-17)
+
+Does not promise a frontier model or replace implementation and real capability evaluation.

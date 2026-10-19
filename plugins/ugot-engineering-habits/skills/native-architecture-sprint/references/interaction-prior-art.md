@@ -1,3 +1,5 @@
+
+
 # Interaction and memory: distinctions that change experiments
 
 Inspected 2026-09-05. Recheck newer revisions when using these sources later. These papers motivate operators and controls; none proves a project model is better.

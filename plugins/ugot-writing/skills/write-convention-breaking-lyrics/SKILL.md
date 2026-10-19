@@ -1,6 +1,7 @@
 ---
 name: write-convention-breaking-lyrics
-description: Research, design, write, rewrite, and audit original English or Korean song lyrics that remain singable while deliberately breaking one lyrical convention. Use for full-song lyrics, chorus hooks, lyric rewrites, anti-cliche passes, reference-song analysis without copying, English stress-beat prosody, Korean prosody, breath inheritance, cross-song breath-pattern separation, semantic hook repetition, song-form planning, lyrics intended for Suno, ACE-Step, or an existing topline, drafts that feel generic or derivative, and healing lyrics that must avoid advice, cure promises, or forced recovery arcs.
+description: "Research, design, write, rewrite, and audit original English or Korean song lyrics that remain singable while deliberately breaking one lyrical convention."
+principle: pro-quality
 ---
 
 # Write Convention-Breaking Lyrics
@@ -453,3 +454,7 @@ Provide:
    `references/english-prosody-convention-breaking.md` when the lyric is English.
 
 Keep the explanation shorter than the lyrics.
+
+## 유래·사례 (description에서 이동, 2026-10-17)
+
+Use for full-song lyrics, chorus hooks, lyric rewrites, anti-cliche passes, reference-song analysis without copying, English stress-beat prosody, Korean prosody, breath inheritance, cross-song breath-pattern separation, semantic hook repetition, song-form planning, lyrics intended for Suno, ACE-Step, or an existing topline, drafts that feel generic or derivative, and healing lyrics that must avoid advice, cure promises, or forced recovery arcs.

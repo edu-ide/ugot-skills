@@ -1,6 +1,12 @@
 ---
 name: architecture-consultation
 description: "AI 모델 아키텍처 설계에 관해 다른 에이전트·모델과 협의하거나 독립 비판을 받을 때 사용한다. 설계의 숨은 가정과 모든 층의 제약을 반례로 검토하고 실제 구현·실험의 결정으로 연결한다. 일반 상담·회의·코드 리뷰·비AI 소프트웨어 설계에는 적용하지 않는다."
+contract:
+  trigger: "AI 모델 아키텍처 설계를 다른 에이전트/모델과 협의하거나 독립 비판을 받을 때"
+  procedure: "숨은 가정·층별 제약을 반례로 검토 → 구현·실험 결정으로 연결"
+  exit_check: "반례 목록과 그에 따른 결정이 기록됐다"
+  evidence: "협의 기록 문서"
+principle: brainstorm-first
 ---
 
 # AI 아키텍처 설계 협의

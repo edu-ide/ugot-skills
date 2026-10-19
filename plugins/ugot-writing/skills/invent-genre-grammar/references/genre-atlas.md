@@ -1,3 +1,5 @@
+
+
 # Genre atlas: laws, not moods
 
 Genres are grouped by **time law**, because that is the axis a stuck writer never
@@ -97,7 +99,6 @@ family lines up neatly with a Western bar, and that is the point.
   density. **Invert:** strip to kick and voice only.
 
 **Never used this family?** That is likely your single biggest available jump.
-
 
 ### Lesser-known, high-rhythm entries
 

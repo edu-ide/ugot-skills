@@ -11,7 +11,8 @@ description: >-
   of real data — then the user catches it and you REDO the whole expensive run. Each "quick then redo" is 2-5×
   the work AND burns a multi-hour GPU run on a known-suboptimal artifact. The fix: consult the registry / SSOT /
   latest-literature for the BEST/LATEST inputs and use them THE FIRST TIME. Sibling of check-latest-literature,
-  recall-before-reinvent, no-silent-omission, no-waste.
+  recall-before-reinvent, spec-first, no-waste.
+principle: predictability-first
 ---
 
 # build-right-the-first-time — consult the registry/SSOT for the BEST input, don't ship known-suboptimal
@@ -28,7 +29,7 @@ whole run on the right input. The redo is the waste. Do it right ONCE.
      older). If the registry names a newer dataset than the one in your hand, USE THE NEWER ONE.
    - **Method/arch** → `check-latest-literature` (the current-year SOTA, not the 2020 default you remember).
    - **Corpus composition** → the project's single source of truth for data composition, never hand-assembled.
-   - **Capabilities to include** → `no-silent-omission` (enumerate ALL, not the subset you remember).
+   - **Capabilities to include** → `spec-first` (enumerate ALL, not the subset you remember).
 3. **Write the "done RIGHT" checklist** — latest datasets ✓, all capabilities ✓, real data ✓, real-benchmark
    measure ✓, best method ✓. Each item = the BEST available, verified BEFORE launch.
 4. **If any item is the OLD/QUICK/PARTIAL option → fix it NOW, before launching.** "I'll use GSM8K now and
@@ -52,4 +53,4 @@ The iterate-and-fix loop (synthetic→real→latest→SSOT, each caught by the u
 every redo re-pays the full run cost AND erodes trust. The registry/SSOT/latest-literature EXIST so the best
 input is one lookup away — the failure is not consulting them under momentum ("just get it running"). This skill
 makes "consult for the best, then build once" a required pre-step. Do it right the first time. Sibling:
-check-latest-literature, recall-before-reinvent, no-silent-omission, no-waste.
+check-latest-literature, recall-before-reinvent, spec-first, no-waste.

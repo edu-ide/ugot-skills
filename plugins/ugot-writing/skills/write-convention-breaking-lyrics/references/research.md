@@ -1,3 +1,5 @@
+
+
 # Research basis
 
 Use these findings as constraints and counterweights, not formulas.

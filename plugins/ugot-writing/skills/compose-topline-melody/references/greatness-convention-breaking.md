@@ -1,3 +1,5 @@
+
+
 # Greatness laws: surprise dose, form time, and the limits of prompting
 
 Read this when the goal is not merely "unfamiliar" but *good* — a song people

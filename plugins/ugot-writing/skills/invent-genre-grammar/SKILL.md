@@ -1,6 +1,7 @@
 ---
 name: invent-genre-grammar
-description: Diagnose why generated songs keep landing in the same genre, measure genre distance across six constitutive law axes, deliberately sample a far genre, invert one genre-defining law while keeping recognizability, hybridize two genres by swapping laws instead of blending sounds, and build a new proto-genre from one replacement law. Use when outputs feel like the same genre every time, when a genre tag produces a prototype instead of a design, when asked to create or invent a genre, break genre conventions, fuse genres, study or choose a genre, escape an indie/pop or lo-fi default, or pick a style prompt that is genuinely far from recent work.
+description: "Diagnose why generated songs keep landing in the same genre, measure genre distance across six constitutive law axes, deliberately sample a far genre, invert one genre-defining law while keeping recognizability, hybridize two genres by swapping laws instead of blending sounds, and build a new proto-genre from one replacement law. Use when outputs feel like the same genre every time, when a genre tag produces a prototype instead of a design, when asked to create or invent a…"
+principle: pro-quality
 ---
 
 # Invent Genre Grammar

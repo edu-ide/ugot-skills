@@ -1,6 +1,12 @@
 ---
 name: model-real-cardinality
 description: Preserve the real 0/1/N cardinality of domain relationships across storage, domain models, APIs, and UI. Use when adding or reviewing fields such as app registrations, memberships, plans, roles, owners, devices, providers, sources, tags, or any scalar foreign key, enum, or boolean that may actually allow multiple simultaneous values or historical associations.
+contract:
+  trigger: "등록·멤버십·플랜·역할·소유자 같은 관계 필드를 추가·검토할 때"
+  procedure: "실제 0/1/N을 확인 → 저장·도메인·API·UI 전 층에 같은 차수 유지"
+  exit_check: "각 층의 차수가 표로 일치한다"
+  evidence: "차수 표가 든 문서/diff"
+principle: faithful-first
 ---
 
 # Model Real Cardinality

@@ -1,6 +1,12 @@
 ---
 name: use-fundamental-terms
 description: Use when naming, renaming, explaining, or documenting a concept, capability, mechanism, law, benchmark target, or architecture primitive, especially when the user asks for a more fundamental term or says a term feels surface-level.
+contract:
+  trigger: "개념·능력·메커니즘·법칙·지표를 이름 짓거나 설명할 때, 용어가 표면적이라 느껴질 때"
+  procedure: "표면 용어 → 근본 원리 용어로 바꾸고 이유 한 줄"
+  exit_check: "바뀐 용어와 이유가 문서에 있다"
+  evidence: "용어 변경 diff"
+principle: fundamental-first
 ---
 
 # Use Fundamental Terms

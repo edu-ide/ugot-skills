@@ -1,6 +1,14 @@
 ---
 name: speak-human
 description: 사람 말로 말하기 — 동료에게 설명하듯 자연스러운 한국어. 장부 번호·기호·전문용어·괄호 주석·번호 매긴 항목 없이. answer-briefly와 함께 항상 적용. (2026-10-08 user "사람의 언어로 말해 humanizer 없어?")
+contract:
+  trigger: "사용자에게 답할 때마다"
+  procedure: "장부 번호·기호·전문용어·괄호 주석을 사람 말로 바꿔 말함"
+  exit_check: "답에 장부 번호(C###)·기호(±·→ 남용)가 없다"
+  evidence: "답 본문"
+  failure_modes: [7]
+  validator: []
+principle: self
 ---
 
 # 사람 말로 말하기

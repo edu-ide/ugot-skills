@@ -8,7 +8,10 @@ marketplace stays the single source; edit skills there, then run:
 
 Skills listed under a plugin's "local_skills" come from --local-skills (skills
 not yet in the private marketplace). Files named in "exclude_files" (for example
-references/local.md, a skill's private profile) are never copied.
+references/local.md, a skill's private profile) are never copied. Folders named
+in a plugin's "keep" (for example hooks that depend on private tools) are left
+as they are in this repo. With "strip_criticmarkup", Markdown files lose their
+CriticMarkup evidence comments, which point at private sources.
 
 Every copied file is scanned before anything is written. A hit on a private
 pattern (personal data, local paths, unpublished research names) stops the
@@ -44,6 +47,20 @@ PRIVATE = re.compile("|".join(l.strip() for l in _private.read_text(encoding="ut
 # Case-sensitive private tokens (internal code names) live next to it.
 _private_cs = _private.with_name("private-patterns-cs.txt")
 BLOCK_CS = re.compile("|".join(l.strip() for l in _private_cs.read_text(encoding="utf-8").splitlines() if l.strip()) or r"(?!x)x")
+
+
+def strip_criticmarkup(text):
+    """Drop CriticMarkup evidence comments and their [cm-*] link definitions.
+
+    The private skills carry per-rule evidence notes that point at private
+    repositories and local transcripts. The public cut keeps the rules only.
+    """
+    text = re.sub(r"[ \t]*\{>>.*?<<\}", "", text, flags=re.S)
+    text = re.sub(r"(?m)^\[cm-[^\]]*\]:.*\n?", "", text)
+    # Links into local transcripts and files mean nothing outside this machine.
+    text = re.sub(r"(?m)^\[[^\]]+\]:\s*(?:claude|codex|file)://.*\n?", "", text)
+    text = re.sub(r"\[([^\]]+)\]\((?:claude|codex|file)://[^)]*\)", r"\1", text)
+    return re.sub(r"\n{3,}", "\n\n", text)
 
 
 def text_files(folder):
@@ -101,6 +118,8 @@ def scan_and_copy(staged, dry_run):
                         raise SystemExit(f"{key}: private source changed since its public override was reviewed "
                                          f"(was {override[:12]}, now {now[:12]}). Re-review overrides/{key}.")
                     text = (ROOT / "overrides" / key).read_text(encoding="utf-8")
+                elif ALLOW.get("strip_criticmarkup") and path.suffix == ".md":
+                    text = strip_criticmarkup(text)
                 for old, new in replace.get(key, []):
                     if old not in text:
                         raise SystemExit(f"{key}: reviewed replacement no longer matches: {old[:60]}")
@@ -118,8 +137,9 @@ def scan_and_copy(staged, dry_run):
         return
     for plugin in staged:
         target = ROOT / "plugins" / plugin
+        keep = set(ALLOW["plugins"][plugin].get("keep", []))
         for sub in ("skills", "hooks", "agents"):
-            if (target / sub).exists():
+            if sub not in keep and (target / sub).exists():
                 shutil.rmtree(target / sub)
     for plugin, rel, src, path, text in plan:
         dest = ROOT / "plugins" / plugin / rel

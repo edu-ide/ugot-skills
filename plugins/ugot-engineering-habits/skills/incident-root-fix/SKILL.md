@@ -1,6 +1,12 @@
 ---
 name: incident-root-fix
 description: "Use when fixing a production or runtime failure — an error in logs, a 500, a deadlock, a timeout, a crash, a flaky test, a leaked process or port, a full disk — and especially the moment you are about to add a retry, a sleep or backoff, a longer timeout, a catch-and-ignore, a raised limit, a cleanup cron, or a skipped test. Separates stopping the bleeding (mitigation) from removing the cause (root fix): names which one a change is, finds the mechanism in primary sources (vendor manual, man page, RFC, the library's source), asks why until the cause is in your own code, build or process, reproduces it against the real dependency (not an in-memory stand-in), removes the cause, keeps the mitigation only as a safety net, checks whether it is a recurrence, and never reports a mitigation as solved. Also on 'is this fundamental? / 근본 해결 맞아? / 정석이야? / 재시도가 최선이야?'."
+contract:
+  trigger: "런타임 장애(에러·500·데드락·타임아웃·크래시·flaky·누수·디스크)를 고칠 때, 재시도·슬립·한도 올리기를 손대려는 순간"
+  procedure: "완화(mitigation)와 근본 수정(root fix) 구분 → 1차 출처에서 메커니즘 확인 → 실제 의존성에 재현 → 원인 제거, 완화는 안전망으로만"
+  exit_check: "변경이 완화/근본 중 어느 쪽인지 명시되고 실제 의존성 재현 기록이 있다"
+  evidence: "재현 명령·출력 + 원인 제거 diff"
+principle: fundamental-first
 ---
 
 # incident-root-fix (장애는 수습과 근본 수정을 나눈다)

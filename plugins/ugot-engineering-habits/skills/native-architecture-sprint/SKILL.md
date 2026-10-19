@@ -1,6 +1,7 @@
 ---
 name: native-architecture-sprint
 description: Design, implement, and experimentally triage a native language-model architecture within a user-specified short research budget, using paper equations and matched trained controls. Use for architecture breakthroughs or one-day model research, not application scaffolds or pretrained-model selection alone.
+principle: sprout-loop
 ---
 
 # Native architecture sprint

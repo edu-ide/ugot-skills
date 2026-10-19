@@ -1,6 +1,14 @@
 ---
 name: pro-quality
 description: 대충·양식 무시 금지 — 문서·화면·코드는 미리보기(렌더링·스크린샷·실행)로 직접 보고 나서 "됐다"고 한다. 주어진 양식·여백·정렬·스타일·참고 이미지를 지키고 production 기준으로 만든다("너무 대충 쓴 거 아니야?", "양식을 아예 무시하면 어떻게 해", "퀄리티 왜 이따구임", "아직도 망가져 있는데 제대로 확인한 거 맞아?").
+contract:
+  trigger: "문서·화면·이미지·앱을 '수정했습니다/만들었습니다'라고 보고하려는 순간, 양식·참고 이미지가 주어졌을 때"
+  procedure: "기준(양식·참고 이미지·기존 화면) 확인 → 실제 경로로 만듦 → 미리보기·스크린샷·실행 결과를 직접 봄 → 기준과 대조해 고치고 다시 봄 → 확인 기준 한 줄"
+  exit_check: "보고 전에 이 턴의 미리보기·스크린샷·렌더 결과가 있고 확인 기준 한 줄이 답에 있다"
+  evidence: "미리보기·스크린샷 파일 또는 렌더 도구 호출"
+  failure_modes: [11]
+  validator: ["tool_use:*screenshot* || tool_use:*preview* || tool_use:*render* || tool_use:mcp__Claude_Browser__computer || tool_use:Read~\\.(png|jpe?g|webp|pdf)"]
+principle: self
 ---
 
 # 프로의 기준으로

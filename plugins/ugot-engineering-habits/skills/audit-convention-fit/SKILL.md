@@ -1,6 +1,12 @@
 ---
 name: audit-convention-fit
-description: "Detect and correct convention-preserving interpretation bias: changing lexical meanings, invoking vague context or metaphor, inventing exceptions, or false-balancing alternatives to protect a current doctrine, consensus, policy, architecture, or social assumption. Use whenever Codex interprets contested primary evidence such as scripture, religious texts, history, law, policy, research, requirements, logs, tests, or observed software behavior; especially when evidence conflicts with an inherited model, when words such as context, metaphor, symbolism, title, role, compatibility, or tradition are used to rescue a favored conclusion, or when competing interpretations must be ranked."
+description: "Detect and correct convention-preserving interpretation bias: changing lexical meanings, invoking vague context or metaphor, inventing exceptions, or false-balancing alternatives to protect a current doctrine, consensus, policy, architecture, or social assumption. Use whenever Codex interprets contested primary evidence such as scripture, religious texts, history, law, policy, research, requirements, logs, tests, or observed software behavior; especially when evidence…"
+contract:
+  trigger: "현재 통념·정책·아키텍처를 지키려 뜻을 바꾸거나 예외를 만들거나 거짓 균형을 세우는 순간"
+  procedure: "해석 편향 탐지 → 원문 뜻으로 복원 → 통념과 충돌하는 해석을 그대로 적음"
+  exit_check: "편향 사례와 교정 문구가 열거돼 있다"
+  evidence: "교정 목록이 든 문서"
+principle: doubt-and-verify
 ---
 
 # Audit Convention Fit

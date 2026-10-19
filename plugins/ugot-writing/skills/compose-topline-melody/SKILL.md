@@ -1,6 +1,7 @@
 ---
 name: compose-topline-melody
-description: Analyze chorus audio references and design, generate, and validate an original mouth-first listener hook, vocal topline, phoneme-level pronunciation or phoneme-triggered accompaniment, instrumental role or memory-harmony grammar, detailed time-varying timbre, or repeatable proto-genre grammar without copying an identifiable melody or singer. Use when a user provides WAV, MP3, MP4, or song references and asks how to hook listeners, create a catchy chorus or earworm, write a singable English or Korean hook or topline melody, break conventional instrumental arrangement, design distinctive pronunciation or timbre, generate an English or Korean song with Suno or ACE-Step, write or fix a Suno style prompt, invent a genre, or escape outputs that feel familiar, derivative, generic, or structurally repetitive.
+description: "Analyze chorus audio references and design, generate, and validate an original mouth-first listener hook, vocal topline, phoneme-level pronunciation or phoneme-triggered accompaniment, instrumental role or memory-harmony grammar, detailed time-varying timbre, or repeatable proto-genre grammar without copying an identifiable melody or singer."
+principle: pro-quality
 ---
 
 # Compose Topline Melody
@@ -546,3 +547,7 @@ Deliver the MP3, WAV, seed, lyrics, unfamiliarity ledger and signature, Joint
 Hook Card, Topline Card, Timbre Card, the proto-genre card when applicable, and
 a concise explanation of which lyric-topline, melodic, timbral, or generative
 grammar convention was broken.
+
+## 유래·사례 (description에서 이동, 2026-10-17)
+
+Use when a user provides WAV, MP3, MP4, or song references and asks how to hook listeners, create a catchy chorus or earworm, write a singable English or Korean hook or topline melody, break conventional instrumental arrangement, design distinctive pronunciation or timbre, generate an English or Korean song with Suno or ACE-Step, write or fix a Suno style prompt, invent a genre, or escape outputs that feel familiar, derivative, generic, or structurally repetitive.

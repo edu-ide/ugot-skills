@@ -1,6 +1,14 @@
 ---
 name: answer-briefly
 description: 모든 답을 짧게 — 결론 먼저, 3줄(또는 3항목) 이내, 표·목록·배경·자기서술 없이. 사용자가 "자세히"라고 할 때만 길게. (2026-10-08 user "왜 이렇게 말이 길어 간단하게 이야기해")
+contract:
+  trigger: "사용자에게 답할 때마다"
+  procedure: "결론 첫 문장 → 3줄/3항목 이내 → 더 있으면 \"더 볼까요?\""
+  exit_check: "답이 결론 먼저이고 3항목을 넘지 않는다(\"자세히\" 요청 제외)"
+  evidence: "답 본문"
+  failure_modes: [7]
+  validator: []
+principle: self
 ---
 
 # 간단하게 말하기

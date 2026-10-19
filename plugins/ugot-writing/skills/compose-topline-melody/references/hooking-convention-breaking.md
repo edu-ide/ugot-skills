@@ -1,3 +1,5 @@
+
+
 # Convention-Breaking Listener Hooking
 
 Use this reference when the user asks for a catchy chorus, earworm, immediate

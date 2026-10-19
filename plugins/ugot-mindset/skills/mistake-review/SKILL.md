@@ -1,6 +1,14 @@
 ---
 name: mistake-review
 description: 에이전트 반복 실수 22패턴 점검표 — 일을 넘겨받을 때·결과를 읽을 때·완료 선언 전·답할 때 이 표로 점검한다. 2025-09~2026-10 Codex·Claude·Grok·Cursor 대화와 저장소 기록에서 사용자가 잡아낸 실수를 유형화한 것(원본·사례·갱신은 UGOT Space 지식망 agent-mistake-review.md). 사용자가 "실수/또/자꾸/왜 그래"라고 할 때도 켠다.
+contract:
+  trigger: "일을 넘겨받을 때·결과를 읽을 때·완료 선언 전, 사용자가 '실수/또/자꾸/왜 그래'라고 할 때"
+  procedure: "정본 실수 목록(agent-mistake-review.md)을 열어 지금 순간에 해당하는 패턴을 대조 → 걸린 패턴마다 켤 장치(스킬·훅)를 켬 → 새 패턴이면 목록에 추가"
+  exit_check: "대조한 패턴 번호와 켠 장치가 답이나 장부에 적혀 있다"
+  evidence: "실수 목록 읽기 호출, 패턴 번호가 든 답 또는 실수 목록 diff"
+  failure_modes: [5]
+  validator: ["tool_use:Read~agent-mistake-review || tool_use:Bash~agent-mistake-review || tool_use:Grep~agent-mistake-review"]
+principle: self
 ---
 
 # 반복 실수 22패턴 (증상 → 켤 장치)
@@ -11,7 +19,7 @@ description: 에이전트 반복 실수 22패턴 점검표 — 일을 넘겨받�
 4. **일차원 사고** → multi-axis-thinking
 5. **근본을 가진 채 잊음**(규칙이 그 순간 안 켜짐) → 훅이 답; 규칙 파일에 같은 문장
 6. **조급함**("느리다" = 더 빨리가 아니라 방향 의심) → 방향 게이트 훅, fundamental-first
-7. **말이 길고 기계적** → answer-briefly, speak-human
+7. **말이 길고 기계적** → answer-briefly, speak-human, visual-first(구조·흐름·비교 설명은 그림 먼저, 비교표부터 내지 않기)
 8. **기록 먼저 안 읽고 재발명** → recall-before-reinvent, 기록 게이트 훅
 9. **검증 전 단언·말 바뀜·과장** → doubt-and-verify
 10. **권한 받고도 되묻기·질문으로 끝내기** → keep-going, 중단 게이트 훅(Stop)
@@ -19,8 +27,8 @@ description: 에이전트 반복 실수 22패턴 점검표 — 일을 넘겨받�
 12. **옆길·시킨 것과 다른 일** → read-the-intent, 지시 재확인 게이트 훅
 13. **정답에 끼워맞추는 해석·통념대로 설명** → doubt-and-verify(원문·데이터 그대로), fundamental-first
 14. **비효율·재계산·중복·유휴** → no-waste
-15. **단순화 후퇴·소극·"한계" 핑계** → fundamental-first(막히면 더 근본으로, 범위 축소 금지)
-16. **은밀한 누락 후 "완료" 선언** → no-silent-omission, 완료 선언 게이트 훅(Stop)
+15. **단순화 후퇴·소극·"한계" 핑계** → fundamental-first(막히면 더 근본으로, 범위 축소 금지), solve-first(남의 열린 소스도 우리 변경 범위: 설정→확장점→패치·포크→교체 사다리, "불가능"엔 소스 위치·측정·라이선스 근거)
+16. **은밀한 누락 후 "완료" 선언** → spec-first(첫 도구 호출 전에 요구를 R1..Rn으로 적고, 끝에서 요구마다 증거 또는 빠진 이유), 완료 선언 게이트 훅(Stop)
 17. **메모리에만 저장** → persist-everywhere
 18. **물어야 생각함**(자기 되물음 없음) → keep-going의 스스로 되묻기, multi-axis-thinking의 대안·반증 축
 19. **자기 프로세스 살해·인프라 자해** → safe-process-control, Bash 가드 훅

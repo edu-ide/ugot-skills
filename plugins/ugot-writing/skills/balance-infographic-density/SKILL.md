@@ -1,6 +1,7 @@
 ---
 name: balance-infographic-density
 description: Rebalance static infographic, report, poster, and PDF-render layouts when oversized containers, tiny text, dead zones, stretched assets, or illustrations mismatched to the content weaken communication. Use for rendered HTML/CSS/SVG/React pages, not ordinary application spacing tweaks.
+principle: pro-quality
 ---
 
 # Balance Infographic Density

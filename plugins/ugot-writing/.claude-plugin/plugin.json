@@ -1,8 +1,8 @@
 {
   "name": "ugot-writing",
   "displayName": "UGOT Writing",
-  "version": "0.1.0",
-  "description": "Reader-first writing (mainly Korean): explain for understanding, style editing, applications, songs and lyrics, story craft, short-form ads.",
+  "version": "0.2.0",
+  "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads. Explaining with pictures moved to ugot-mindset (visual-first).",
   "author": {
     "name": "UGOT"
   },

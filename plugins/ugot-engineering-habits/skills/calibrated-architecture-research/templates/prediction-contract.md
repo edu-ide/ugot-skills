@@ -1,3 +1,5 @@
+
+
 # Prediction and architecture decision contract
 
 Record before new observations. Unknowns remain unknown; do not fabricate

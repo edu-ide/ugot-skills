@@ -1,6 +1,14 @@
 ---
 name: safe-process-control
 description: 프로세스는 PID로만 — pkill -f·killall·kill -9·pgrep 패턴 일괄 종료 금지(자기 자신·남의 프로세스·건강한 런을 죽인 사고가 6회 이상 재발). 종료 전 PID·명령줄·시작 시각으로 "내 것이고 낡은 것"임을 확인하고, SIGKILL·exit 137은 OOM이 아니라 "누가 죽였나"부터 본다.
+contract:
+  trigger: "프로세스를 종료·재시작하려는 순간, 죽은 런(SIGKILL·exit 137)의 원인을 적으려는 순간"
+  procedure: "ps -o pid,lstart,cmd -p <pid>로 명령줄·시작 시각 확인 → 내 것이고 낡은 것일 때만 kill <pid>(SIGTERM 먼저) → 패턴 일괄 종료 금지 → SIGKILL은 '누가 죽였나'부터"
+  exit_check: "kill마다 그 PID의 ps 확인이 먼저 있고 패턴으로 고른 일괄 종료(pkill -f·killall)가 없다"
+  evidence: "ps -p 출력과 kill <pid>가 든 Bash 호출"
+  failure_modes: [19]
+  validator: ["tool_use:Bash~(ps (-[a-z]+ )*-p|ps -o|/proc/[0-9]+)"]
+principle: self
 ---
 
 # 프로세스를 죽이기 전에

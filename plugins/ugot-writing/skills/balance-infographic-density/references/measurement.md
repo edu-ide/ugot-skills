@@ -1,3 +1,5 @@
+
+
 # Measuring infographic density
 
 Use measurement to locate suspicious regions, then decide from the render. Texture, ornament, and dark backgrounds can make screenshot pixel-density heuristics unreliable, so prefer DOM or SVG geometry when available.

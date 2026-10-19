@@ -1,6 +1,14 @@
 ---
 name: doubt-and-verify
 description: 검증 전 단언 금지 — "된다/문제없다/완료/정상/곧 된다"고 말하기 전에 실제 확인(실행·출력·파일·로그·화면)으로 검증하고, VERIFIED와 UNVERIFIED를 나눠 말한다. 내부 점수·추정·기억은 근거가 아니다("자꾸 뇌피셜하지 말고", "넌 분명 문제없다 했는데 자꾸 말이 달라져서", "거짓말 같은 건 안 했지?", "실제 출력 보는 게 중요").
+contract:
+  trigger: "\"된다/완료/정상/곧 된다/안 된다\"를 말하려는 순간, 긴 런을 보고하려는 순간"
+  procedure: "주장 → 실제 확인(실행·출력·파일·로그·화면) → VERIFIED/UNVERIFIED로 나눠 말함"
+  exit_check: "답에 VERIFIED 항목마다 확인 명령·출력이 붙고 UNVERIFIED가 따로 적혀 있다"
+  evidence: "확인 명령과 출력이 든 대화 줄 또는 로그 파일"
+  failure_modes: [9, 13, 26]
+  validator: ["tool_use:Bash || tool_use:mcp__Claude_Browser__* || tool_use:mcp__claude-in-chrome__*", "reply_contains:VERIFIED || reply_contains:미확인 || reply_contains:확인"]
+principle: self
 ---
 
 # 의심하고 확인한 뒤에 말한다

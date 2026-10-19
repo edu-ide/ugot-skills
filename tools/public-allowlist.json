@@ -7,43 +7,54 @@
     "ugot-mindset": {
       "from": "ugot-mindset",
       "displayName": "UGOT Mindset",
-      "version": "0.7.6",
-      "description": "How the agent should think and talk with the user: read the intent, verify before claiming, no silent omission, keep going, brief human answers. 19 skills, 2 agents and automatic prompt/result/stop/bash gates.",
+      "version": "0.8.0",
+      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers. 30 skills, 2 agents and automatic prompt/result/stop/bash gates.",
       "skills": [
+        "add-without-breaking",
         "answer-briefly",
+        "blame-the-instrument-first",
+        "design-turn-first",
         "doubt-and-verify",
+        "faithful-first",
         "fundamental-first",
         "honest-eta",
+        "human-understands",
+        "improve-governing-rules",
         "keep-going",
         "mistake-review",
         "multi-axis-thinking",
         "multi-ruler",
-        "no-silent-omission",
         "no-waste",
+        "one-source-of-truth",
         "persist-everywhere",
         "predictability-first",
         "pro-quality",
         "question-the-task-first",
         "read-the-intent",
+        "real-input-real-check",
         "recall-before-reinvent",
+        "reference-first",
         "safe-process-control",
+        "solve-first",
         "speak-human",
-        "sprout-loop"
+        "spec-first",
+        "sprout-loop",
+        "visual-first"
       ],
       "extra": [
-        "hooks",
         "agents"
+      ],
+      "keep": [
+        "hooks"
       ]
     },
     "ugot-writing": {
       "from": "ugot-writing-skills",
       "displayName": "UGOT Writing",
-      "version": "0.1.0",
-      "description": "Reader-first writing (mainly Korean): explain for understanding, style editing, applications, songs and lyrics, story craft, short-form ads.",
+      "version": "0.2.0",
+      "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads. Explaining with pictures moved to ugot-mindset (visual-first).",
       "skills": [
-        "explain-for-understanding",
         "korean-style-editor",
-        "question-focused-writing",
         "write-for-the-reader",
         "invent-genre-grammar",
         "compose-topline-melody",
@@ -57,7 +68,7 @@
     "ugot-engineering-habits": {
       "from": "ugot-dev-skills",
       "displayName": "UGOT Engineering Habits",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "description": "Engineering habits for coding agents: build it right the first time, check the latest literature, disclose shortcuts, premortem before claims, use fundamental terms, consult on architecture, separate incident mitigation from the root fix.",
       "skills": [
         "architecture-consultation",
@@ -70,7 +81,6 @@
         "model-real-cardinality",
         "native-architecture-sprint",
         "precheck-and-premortem",
-        "self-questioning",
         "use-fundamental-terms"
       ]
     },
@@ -85,35 +95,75 @@
       ]
     }
   },
-  "replace": {},
+  "replace": {
+    "ugot-mindset/skills/add-without-breaking/SKILL.md": [
+      [
+        "(기록: 능력별 순차 폴드가 유창성·턴을 번갈아 침식, C264)",
+        "(예: 능력을 하나씩 순차로 더하자 유창성과 대화 턴 능력이 번갈아 무너졌다)"
+      ],
+      [
+        " [references/chokepoints.md](references/chokepoints.md).",
+        ""
+      ]
+    ],
+    "ugot-mindset/skills/blame-the-instrument-first/SKILL.md": [
+      [
+        ", C420-422)",
+        ")"
+      ]
+    ],
+    "ugot-mindset/skills/real-input-real-check/SKILL.md": [
+      [
+        "기록(C535)이",
+        "기록이"
+      ]
+    ],
+    "ugot-mindset/skills/recall-before-reinvent/SKILL.md": [
+      [
+        "(예: world-gram-llm `canonical_check.py --symptom \"깊어지면 무너짐\"`)",
+        "(예: 증상 문구로 검색하는 진단 스크립트)"
+      ]
+    ],
+    "ugot-mindset/skills/spec-first/references/no-silent-omission.md": [
+      [
+        "2단계 '대조'는 장부 게이트(ledger-gate, Stop·SubagentStop)와 스펙 키트 `req_coverage.py`로 옮겼다. 설계: world-gram-llm `docs/wiki/architecture/SKILL-CLEAN-ARCHITECTURE-20261017.md` §11.",
+        "2단계 '대조'는 끝의 요구별 대조(장부를 읽는 Stop 게이트가 있으면 기계)로 옮겼다."
+      ]
+    ]
+  },
   "exclude_files": [
     "references/local.md",
     "ugot-writing/skills/write-for-the-reader/references/application-editing-cases.md",
-    "ugot-writing/skills/write-for-the-reader/references/grant-plan-hedging-case.md"
+    "ugot-writing/skills/write-for-the-reader/references/grant-plan-hedging-case.md",
+    "ugot-mindset/skills/persist-everywhere/references/persist-to-repo-not-memory.md",
+    "ugot-mindset/skills/persist-everywhere/references/assetize.md",
+    "ugot-mindset/skills/add-without-breaking/references/chokepoints.md"
   ],
   "overrides": {
     "ugot-mindset/hooks/launch-gate.py": "c19615f199f059ae942d75a601da7b9b75eee4071993617a47cfea2383e96041",
     "ugot-mindset/hooks/mindset-gate.py": "e2e9b2b21545cd7f3889f1f976f08587390632d542a2bf55c32bdacc838adfbc",
     "ugot-mindset/hooks/research-gate.py": "436be1b08fd3df4c7c6d33fcfba41a548b3bf43d5154a0fb6eff3bff66a44c38",
-    "ugot-mindset/skills/answer-briefly/SKILL.md": "7891bb16e93d1ed5fd947e514f82bad7cdcf0556da8dee2e17872c1bc60dabdf",
-    "ugot-mindset/skills/speak-human/SKILL.md": "f1c95f87b11f343eb0f5832135377f5f282544281fc1e8b24cb274be552bf35c",
-    "ugot-mindset/skills/multi-axis-thinking/SKILL.md": "e7f57d7e89bae46b37f46401c957b11eb5de54b9ab45d05abc24d10f5d18bc56",
-    "ugot-mindset/skills/fundamental-first/SKILL.md": "4d3e92e56e1134731a221d82d205d71c1dc261a436d060cfab4a7002a67135e6",
-    "ugot-mindset/skills/multi-ruler/SKILL.md": "c040361fe8111606ca2e65571e4b0d1f201da4a09d935f6e237e7dda74859ace",
-    "ugot-mindset/skills/question-the-task-first/SKILL.md": "8618330b968f7cd521510d7cf752b0e1ae1151890cd9ab08d6a238d0c3c866ce",
-    "ugot-mindset/skills/persist-everywhere/SKILL.md": "604545d6c1a797ec0d76166a4f3eabca1e51929cc1ffd524effc4a5f775f6c02",
-    "ugot-mindset/skills/mistake-review/SKILL.md": "1a50878c485bce30cdfa5a83e2ececd60314d8f97f83185b6c46ef79c873f69a",
-    "ugot-writing/skills/application-final-approval/SKILL.md": "30f764bf5046d0c3c49cd29a10044533f63c01014e7efd488901f6c2f4a0c29b",
-    "ugot-writing/skills/write-for-the-reader/SKILL.md": "ea9f00b094f1e60293f985e13571dc95dc33f28386e19a48cd3c99613de84254",
-    "ugot-writing/skills/write-convention-breaking-lyrics/references/supplied-song-matrix.md": "b0775eaf04bf4644085a6aae42027afd625391302348db5745352fcca2ea7748",
-    "ugot-writing/skills/reels-ad-production/SKILL.md": "6b8faa6bbee52fb41aaa9a2ab4984b53b41be3ff920bbf0514622c666d30b491",
-    "ugot-writing/skills/reels-ad-production/references/observed-reels.md": "60321785e7c6cb95d5a5fdc16859adaf71612ee2c89340e00ed4cdaac5ca2c53",
-    "ugot-writing/skills/reels-ad-production/references/production-workflow.md": "de2211ec4ac8baaa117bcbc247dcebae83f349fdf85bcfa244bdd2975fd8eba9",
-    "ugot-engineering-habits/skills/check-latest-literature/SKILL.md": "40130795866b16ad8668cc065e763b4bd578d90d1e1e654e34d06874e90b98f9",
-    "ugot-engineering-habits/skills/disclose-implementation-fidelity/SKILL.md": "69b3c36f574da2f228c6a17ed813a354fd7289cb355f15c5f05596830196a01c",
-    "ugot-engineering-habits/skills/build-right-the-first-time/SKILL.md": "f4d35dae18ff023bce82d20943977189d4dab8543baabacef69fd1dca07cf9e7",
-    "ugot-engineering-habits/skills/precheck-and-premortem/SKILL.md": "553b89c7eac8374048b5b3f70fb81a4e945751d36c3730037bb5f01e22f986f6",
-    "ugot-engineering-habits/skills/use-fundamental-terms/SKILL.md": "45b5a1125657ea3d278088d3c3344bbfed2b3317562a4560fdf89b250464d4a1",
-    "ugot-engineering-habits/skills/incident-root-fix/SKILL.md": "c6f0772173bc7cb55f7e547629457447168d12687f973611823458094fdfc2ae"
-  }
+    "ugot-mindset/skills/answer-briefly/SKILL.md": "393845761f07ef55a834556b7990506f3c97f41ff523c87b6df57ccdf8f70894",
+    "ugot-mindset/skills/speak-human/SKILL.md": "8c1b693d1d50dd77716751623625de4a6b4b9a19f6cf87733b255710d8887228",
+    "ugot-mindset/skills/multi-axis-thinking/SKILL.md": "294bdb6cbee4438358bcf34c17651a299f61f85e83b1322e075b74ceb9278116",
+    "ugot-mindset/skills/fundamental-first/SKILL.md": "e0e6e2e4db4ccfed3d69ea44296567dc791249f649bea94dcbb6338a1be6d6d1",
+    "ugot-mindset/skills/multi-ruler/SKILL.md": "ee14d4d9c161ead210ebb909bbc441e095e6cf1850459e25ed7e478ad9a3cc0b",
+    "ugot-mindset/skills/question-the-task-first/SKILL.md": "4d45aa08f9754ccdde231ba9f0c973484b28f4d5c6f5738ddd683b6ba6369ff6",
+    "ugot-mindset/skills/persist-everywhere/SKILL.md": "ed9eac7df680f0b3660569595f517f2be51c77cc12fb563943bce2470f0f0552",
+    "ugot-mindset/skills/mistake-review/SKILL.md": "3655970d004dd633d155c9ad078c54c02e024a8f08c6d8439c340bc7db527066",
+    "ugot-writing/skills/application-final-approval/SKILL.md": "24b4ab9a355cbcdc54ee8e37f0ec16f10959db236184cef79ed70c6fcd3b773c",
+    "ugot-writing/skills/write-for-the-reader/SKILL.md": "133e0be4c0b172297ef0ec0e164b64539cf47c4f49528168a1cfb7a69bcb772e",
+    "ugot-writing/skills/write-convention-breaking-lyrics/references/supplied-song-matrix.md": "4507d6e291afc3d2f2f76cc8a7a766d867305535d62eaa024cfb5dea08f1c904",
+    "ugot-writing/skills/reels-ad-production/SKILL.md": "5ef1185344f0038ad2e1d0c2b8a049fb2f1cb6e12c12fe2297c0c9c20877b35d",
+    "ugot-writing/skills/reels-ad-production/references/observed-reels.md": "29a06abfb0b6d61ff0fdf02b01c0a4741fb9fc05fd62ef25c478f89b9d10b42e",
+    "ugot-writing/skills/reels-ad-production/references/production-workflow.md": "c939edd9a2338bf021770b36276af05c4396fc41927f025ba718375eddb4802d",
+    "ugot-engineering-habits/skills/check-latest-literature/SKILL.md": "c8ef9dda112914705717e94151651dfc68ff9f3373527cfd23e0b1682486c7c6",
+    "ugot-engineering-habits/skills/disclose-implementation-fidelity/SKILL.md": "2e1c959e40ee6c637bdae00df73d2f3b9670c5a11e4765eba664ac212a59c2e6",
+    "ugot-engineering-habits/skills/build-right-the-first-time/SKILL.md": "28e22f8d50b8e8484ad710bb34e355f8999d8bd6db565f9927f3d10528e8f9ad",
+    "ugot-engineering-habits/skills/precheck-and-premortem/SKILL.md": "16ac3c6b90876063dbc049338ab875cc8368f6b02c935b797935cb5b56dab767",
+    "ugot-engineering-habits/skills/use-fundamental-terms/SKILL.md": "79b1be14e5ba63af53f15f0aed9987ee1b3bb6bacccc87b7ba1948ea80415ce6",
+    "ugot-engineering-habits/skills/incident-root-fix/SKILL.md": "4649003cd299849c9cb442672a48f25354af57ae773312f93087a381217134cd",
+    "ugot-mindset/skills/spec-first/SKILL.md": "db563a77dbe6804a65ffbf0fc1a72174fd3dd965c198ecb3f844a86ac70b471f"
+  },
+  "strip_criticmarkup": true
 }

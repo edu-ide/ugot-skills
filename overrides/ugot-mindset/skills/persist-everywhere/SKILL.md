@@ -1,8 +1,15 @@
 ---
 name: persist-everywhere
 description: 결론·법칙·교훈·결정을 메모리에만 두지 않는다 — 저장소(규칙 파일·문서·코드), UGOT Space 지식망, Work 작업 기록 세 곳에 남기고, 재사용할 마인드셋은 플러그인(마켓플레이스)에 올려 모든 프로젝트에 적용한다("너가 메모리만 업데이트하면 안 돼 — 여기 문서들도", "지식망에도 업데이트해야 되는 거 아니야?", "한 번 말하면 기억을 잊지 말고 영원히 개선돼야").
+contract:
+  trigger: "결론·법칙·교훈·결정이 생긴 그 턴, 조사 결과를 얻은 턴, 사용자가 이전 결정을 정정하거나 규칙 개정안이 채택됐을 때"
+  procedure: "정본 저장소(문서·코드·규칙 파일)에 커밋 → UGOT Space 지식망 항목 갱신 → Work 작업 기록에 연결 → 개인 메모리는 포인터만 → 다시 읽어 링크 확인"
+  exit_check: "저장소 커밋·Space 항목·Work 기록 세 곳이 같은 턴에 있고 서로를 가리킨다"
+  evidence: "커밋 해시, Space 항목 경로, Work 작업 ID"
+  failure_modes: [17]
+  validator: ["tool_use:Bash~git commit || file_changed:*.md", "tool_use:mcp__brain__* || tool_use:Bash~(^|\\s)brain\\s", "tool_use:mcp__work__* || tool_use:Bash~ugot-work"]
+principle: self
 ---
-
 # 세 곳에 남긴다
 
 **검사 질문**: 내 메모리가 지워져도 이 사실이 프로젝트와 사용자에게 남는가? 아니면 아직 저장된 게 아니다.

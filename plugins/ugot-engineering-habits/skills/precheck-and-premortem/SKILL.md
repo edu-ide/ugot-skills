@@ -1,6 +1,7 @@
 ---
 name: precheck-and-premortem
 description: "Use BEFORE claiming \"this works / no problem / it's done / it'll be fine\" OR before committing to a plan/build. Forces a theoretical PRE-CHECK (recall + read + reason against the laws) and a PRE-MORTEM (enumerate failure modes + plan the fix in advance) FIRST, then a CALIBRATED claim (VERIFIED vs EXPECTED-but-unverified). Prevents the flip-flop where you assert \"no problem\" then reverse later. Triggers on: about to say works/fine/no-problem/done/should-work, about to launch a build/experiment, \"이론상 문제 없는지\", \"말이 자꾸 달라\", planning a multi-step or expensive action."
+principle: predictability-first
 ---
 
 # Pre-check + pre-mortem before claiming
@@ -12,6 +13,7 @@ CLAIMED before CHECKING. The user: "넌 분명 문제 없다 했는데 자꾸 �
 verification is.
 
 ## The mandate (do this BEFORE any "works/no-problem/done" claim or plan commitment)
+
 1. **PRE-CHECK theoretical soundness.**
    - RECALL: read the project's status table + grep the ledger for this exact thing (is it already done / already rejected / already measured?).
    - READ: open the actual code/script/config — do not assume what it does.
@@ -25,6 +27,7 @@ verification is.
    Never assert "no problem / it works" on an unverified thing. If unchecked, the honest output is the risk + plan, not a yes.
 
 ## Why this gives consistency
+
 The story stops changing when the claim is anchored to a check, not to optimism. A pre-mortem surfaces the blocker
 BEFORE you assert success, so you don't have to retract it later. Cheap-probe-before-expensive-commit also saves the
 multi-hour build that would have failed at an unchecked stage.

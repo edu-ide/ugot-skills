@@ -11,6 +11,14 @@ description: >
   dodge a conflict between two training goals, when nobody had MEASURED whether unified training fails for a
   FUNDAMENTAL reason or just an OPTIMIZATION one (fixable by warmup/curriculum). A workaround chosen before the root
   is diagnosed is debt, and it ENTRENCHES the unsolved root.
+contract:
+  trigger: "문제를 피하는 우회(격리·게이트·post-base 설치·라우트·특수처리)를 채택하려는 순간"
+  procedure: "근본 원인을 측정으로 진단(FUNDAMENTAL vs UNOPTIMIZED) → 근본 수정 시도 → 우회는 측정 후 최후"
+  exit_check: "진단 측정 결과와 \"우회가 아닌 이유/우회인 이유\" 한 줄이 있다"
+  evidence: "진단 측정 명령·출력"
+  failure_modes: [6, 13, 15]
+  validator: ["tool_use:Bash", "reply_contains:우회 || reply_contains:근본"]
+principle: self
 ---
 
 # fundamental-first
