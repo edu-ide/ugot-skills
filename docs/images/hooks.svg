@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="720" viewBox="0 0 1360 720" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <title>ugot-mindset 훅이 걸리는 네 시점</title>
+  <desc>요청을 받을 때(UserPromptSubmit) mindset-gate가 알리고, 명령 실행 전(PreToolUse) bash-guard와 launch-gate가 막고, 도구 실행 후(PostToolUse) result-gate와 research-gate가 알리고, 턴을 끝낼 때(Stop) stop-gate가 막는다.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="1360" height="720" fill="#FFFFFF"/>
+
+  <text x="680" y="56" text-anchor="middle" font-size="30" font-weight="600" fill="#2C2C2A">에이전트 한 턴과 훅이 걸리는 네 시점</text>
+
+  <!-- timeline -->
+  <g font-size="22" font-weight="600" fill="#2C2C2A" text-anchor="middle">
+    <rect x="40" y="96" width="290" height="92" rx="14" fill="#F1EFE8" stroke="#888780"/>
+    <text x="185" y="136">요청을 받을 때</text>
+    <text x="185" y="166" font-size="17" font-weight="400" fill="#5F5E5A">UserPromptSubmit</text>
+
+    <rect x="370" y="96" width="290" height="92" rx="14" fill="#F1EFE8" stroke="#888780"/>
+    <text x="515" y="136">명령 실행 전</text>
+    <text x="515" y="166" font-size="17" font-weight="400" fill="#5F5E5A">PreToolUse (Bash)</text>
+
+    <rect x="700" y="96" width="290" height="92" rx="14" fill="#F1EFE8" stroke="#888780"/>
+    <text x="845" y="136">도구 실행 후</text>
+    <text x="845" y="166" font-size="17" font-weight="400" fill="#5F5E5A">PostToolUse</text>
+
+    <rect x="1030" y="96" width="290" height="92" rx="14" fill="#F1EFE8" stroke="#888780"/>
+    <text x="1175" y="136">턴을 끝낼 때</text>
+    <text x="1175" y="166" font-size="17" font-weight="400" fill="#5F5E5A">Stop</text>
+  </g>
+  <g stroke="#5F5E5A" stroke-width="2" marker-end="url(#a)">
+    <line x1="332" y1="142" x2="366" y2="142"/>
+    <line x1="662" y1="142" x2="696" y2="142"/>
+    <line x1="992" y1="142" x2="1026" y2="142"/>
+  </g>
+
+  <!-- hooks: teal = remind, coral = block -->
+  <g text-anchor="middle">
+    <rect x="40" y="220" width="290" height="250" rx="14" fill="#E1F5EE" stroke="#0F6E56"/>
+    <text x="185" y="262" font-size="22" font-weight="600" fill="#085041">mindset-gate</text>
+    <text x="185" y="300" font-size="18" fill="#0F6E56">메시지에 특정 말이 있으면</text>
+    <text x="185" y="328" font-size="18" fill="#0F6E56">그 상황의 스킬을 켜라는</text>
+    <text x="185" y="356" font-size="18" fill="#0F6E56">문구를 한 줄 넣는다</text>
+    <text x="185" y="410" font-size="17" fill="#085041">예: "이전 대화" → 기록 게이트</text>
+    <text x="185" y="440" font-size="17" fill="#085041">"아키텍처" → 통념 밖 게이트</text>
+
+    <rect x="370" y="220" width="290" height="115" rx="14" fill="#FAECE7" stroke="#993C1D"/>
+    <text x="515" y="262" font-size="22" font-weight="600" fill="#712B13">bash-guard</text>
+    <text x="515" y="298" font-size="18" fill="#993C1D">pkill 같은 패턴 종료를 막고</text>
+    <text x="515" y="324" font-size="18" fill="#993C1D">PID로 끄라고 안내</text>
+    <rect x="370" y="355" width="290" height="115" rx="14" fill="#FAECE7" stroke="#993C1D"/>
+    <text x="515" y="397" font-size="22" font-weight="600" fill="#712B13">launch-gate</text>
+    <text x="515" y="433" font-size="18" fill="#993C1D">설계 카드 없는 학습 실행을</text>
+    <text x="515" y="459" font-size="18" fill="#993C1D">막는다</text>
+
+    <rect x="700" y="220" width="290" height="115" rx="14" fill="#E1F5EE" stroke="#0F6E56"/>
+    <text x="845" y="262" font-size="22" font-weight="600" fill="#085041">result-gate</text>
+    <text x="845" y="298" font-size="18" fill="#0F6E56">FAIL·점수가 보이면</text>
+    <text x="845" y="324" font-size="18" fill="#0F6E56">반응 전에 원리·반증 먼저</text>
+    <rect x="700" y="355" width="290" height="115" rx="14" fill="#E1F5EE" stroke="#0F6E56"/>
+    <text x="845" y="397" font-size="22" font-weight="600" fill="#085041">research-gate</text>
+    <text x="845" y="433" font-size="18" fill="#0F6E56">웹 검색 결과를</text>
+    <text x="845" y="459" font-size="18" fill="#0F6E56">그 턴에 기록하라</text>
+
+    <rect x="1030" y="220" width="290" height="250" rx="14" fill="#FAECE7" stroke="#993C1D"/>
+    <text x="1175" y="262" font-size="22" font-weight="600" fill="#712B13">stop-gate</text>
+    <text x="1175" y="300" font-size="18" fill="#993C1D">이렇게 끝내려 하면 막는다</text>
+    <text x="1175" y="346" font-size="17" fill="#712B13">· 허락 질문으로 멈추기</text>
+    <text x="1175" y="378" font-size="17" fill="#712B13">· 빠진 것을 숨긴 "완료"</text>
+    <text x="1175" y="410" font-size="17" fill="#712B13">· 만든 것 없이 "나중에"</text>
+  </g>
+
+  <!-- principle -->
+  <rect x="40" y="508" width="1280" height="96" rx="14" fill="#EEEDFE" stroke="#534AB7"/>
+  <text x="680" y="550" text-anchor="middle" font-size="24" font-weight="600" fill="#3C3489">스킬 글은 기억해야 켜지고, 훅은 그 시점이 오면 기억과 상관없이 실행된다</text>
+  <text x="680" y="584" text-anchor="middle" font-size="18" fill="#534AB7">"알고는 있는데 그 순간에 안 켜지는" 실수를 훅으로 옮겼다</text>
+
+  <!-- legend -->
+  <g font-size="18" fill="#444441">
+    <rect x="60" y="642" width="28" height="20" rx="4" fill="#FAECE7" stroke="#993C1D"/>
+    <text x="100" y="658">막음</text>
+    <rect x="190" y="642" width="28" height="20" rx="4" fill="#E1F5EE" stroke="#0F6E56"/>
+    <text x="230" y="658">알림 (문맥에 한 줄 넣음)</text>
+  </g>
+</svg>
