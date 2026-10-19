@@ -13,7 +13,7 @@
     {
       "name": "ugot-writing",
       "source": "./plugins/ugot-writing",
-      "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads. Explaining with pictures moved to ugot-mindset (visual-first)."
+      "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads, and CriticMarkup evidence notes on every claim (criticmarkup). Explaining with pictures moved to ugot-mindset (visual-first)."
     },
     {
       "name": "ugot-engineering-habits",

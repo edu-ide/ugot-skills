@@ -1,0 +1,6 @@
+interface:
+  display_name: "CriticMarkup 근거 연결"
+  short_description: "Markdown과 자체 스킬의 주장마다 근거·위치·미확인 사항을 연결합니다"
+  default_prompt: "$criticmarkup 스킬로 이 Markdown의 모든 의미 단위에 근거를 연결하고 미확인 사항을 밝혀 주세요."
+policy:
+  allow_implicit_invocation: true

@@ -51,8 +51,8 @@
     "ugot-writing": {
       "from": "ugot-writing-skills",
       "displayName": "UGOT Writing",
-      "version": "0.2.0",
-      "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads. Explaining with pictures moved to ugot-mindset (visual-first).",
+      "version": "0.3.0",
+      "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads, and CriticMarkup evidence notes on every claim (criticmarkup). Explaining with pictures moved to ugot-mindset (visual-first).",
       "skills": [
         "korean-style-editor",
         "write-for-the-reader",
@@ -63,6 +63,9 @@
         "application-final-approval",
         "bestseller-product-review",
         "reels-ad-production"
+      ],
+      "local_skills": [
+        "criticmarkup"
       ]
     },
     "ugot-engineering-habits": {
@@ -128,6 +131,16 @@
       [
         "2단계 '대조'는 장부 게이트(ledger-gate, Stop·SubagentStop)와 스펙 키트 `req_coverage.py`로 옮겼다. 설계: world-gram-llm `docs/wiki/architecture/SKILL-CLEAN-ARCHITECTURE-20261017.md` §11.",
         "2단계 '대조'는 끝의 요구별 대조(장부를 읽는 Stop 게이트가 있으면 기계)로 옮겼다."
+      ]
+    ],
+    "ugot-writing/skills/criticmarkup/SKILL.md": [
+      [
+        "\n---\n\n# CriticMarkup으로 근거 연결하기",
+        "\nprinciple: doubt-and-verify\n---\n\n# CriticMarkup으로 근거 연결하기"
+      ],
+      [
+        "CriticMarkup을 도입하면 우리 문서의 오류가 줄어들 것이라고 예상한다.\n",
+        "CriticMarkup을 도입하면 우리 문서의 오류가 줄어들 것이라고 예상한다. {>>근거: 유형=제안; 출처=작성자 예상; 상태=미확인; 부족=도입 전후 문서 오류 비교; 한계=효과를 측정한 결과가 아니다<<}\n"
       ]
     ]
   },

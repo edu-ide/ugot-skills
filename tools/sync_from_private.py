@@ -50,16 +50,46 @@ _private_cs = _private.with_name("private-patterns-cs.txt")
 BLOCK_CS = re.compile("|".join(l.strip() for l in _private_cs.read_text(encoding="utf-8").splitlines() if l.strip()) or r"(?!x)x")
 
 
-def strip_criticmarkup(text):
-    """Drop CriticMarkup evidence comments and their [cm-*] link definitions.
+PUBLIC_LINK = re.compile(r"https://(?!github\.com/edu-ide/(?!ugot-skills\b))[^\s)\]]+")
+CODE = re.compile(r"(```.*?```|`[^`\n]*`)", re.S)
 
-    The private skills carry per-rule evidence notes that point at private
-    repositories and local transcripts. The public cut keeps the rules only.
+
+def strip_criticmarkup(text):
+    """Keep only evidence comments that a public reader can follow.
+
+    The private skills carry per-rule CriticMarkup evidence notes. A note stays
+    when every source it links is a public https page (not another edu-ide
+    repository); notes that point at private repositories, local transcripts or
+    files, or at nothing, are dropped. Code spans are left alone, so syntax
+    examples such as `{>> <<}` survive. Unused or private link definitions go.
     """
-    text = re.sub(r"[ \t]*\{>>.*?<<\}", "", text, flags=re.S)
-    text = re.sub(r"(?m)^\[cm-[^\]]*\]:.*\n?", "", text)
-    # Links into local transcripts and files mean nothing outside this machine.
-    text = re.sub(r"(?m)^\[[^\]]+\]:\s*(?:claude|codex|file)://.*\n?", "", text)
+    defs = dict(re.findall(r"(?m)^\[([^\]]+)\]:\s*(\S+)", text))
+
+    def public(note):
+        targets = re.findall(r"\]\(([^)]+)\)", note)
+        targets += [defs[r] for r in re.findall(r"\]\[([^\]]+)\]", note) if r in defs]
+        targets += re.findall(r"https?://[^\s)\]]+", note)
+        return bool(targets) and all(PUBLIC_LINK.fullmatch(u) for u in targets)
+
+    codes = []
+
+    def hide(m):
+        codes.append(m.group(0))
+        return f"\0{len(codes) - 1}\0"
+
+    text = CODE.sub(hide, text)  # syntax examples in code stay untouched
+    text = re.sub(r"[ \t]*\{>>.*?<<\}", lambda m: m.group(0) if public(m.group(0)) else "", text, flags=re.S)
+    text = re.sub(r"\0(\d+)\0", lambda m: codes[int(m.group(1))], text)
+    used = set(re.findall(r"\]\[([^\]]+)\]", text))
+
+    def keep_def(m):
+        name, url = m.group(1), m.group(2)
+        if "://" not in url:  # a relative link inside this repo
+            return m.group(0)
+        return m.group(0) if name in used and PUBLIC_LINK.fullmatch(url) else ""
+
+    text = re.sub(r"(?m)^\[([^\]]+)\]:\s*(\S+).*\n?", keep_def, text)
+    # Inline links into local transcripts and files mean nothing outside this machine.
     text = re.sub(r"\[([^\]]+)\]\((?:claude|codex|file)://[^)]*\)", r"\1", text)
     return re.sub(r"\n{3,}", "\n\n", text)
 
@@ -113,6 +143,16 @@ def refuse_uncommitted(source_root, staged):
     if out.returncode != 0:
         raise SystemExit(f"cannot read git status of {source_root}: {out.stderr.strip()}")
     dirty = [l for l in out.stdout.splitlines() if l.strip()]
+    for entries in staged.values():
+        for src in entries.values():
+            if src.is_relative_to(source_root):
+                continue
+            real = src.resolve()
+            top = subprocess.run(["git", "-C", str(real), "rev-parse", "--show-toplevel"], capture_output=True, text=True)
+            if top.returncode == 0:
+                st = subprocess.run(["git", "-C", top.stdout.strip(), "status", "--porcelain", "--", str(real)],
+                                    capture_output=True, text=True)
+                dirty += [f"{real}: {l}" for l in st.stdout.splitlines() if l.strip()]
     if dirty:
         raise SystemExit("private source has uncommitted changes in copied paths; sync from a clean "
                          "export of HEAD instead (git archive HEAD | tar -x -C <dir>):\n" + "\n".join(dirty))
