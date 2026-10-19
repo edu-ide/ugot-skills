@@ -7,8 +7,8 @@
     "ugot-mindset": {
       "from": "ugot-mindset",
       "displayName": "UGOT Mindset",
-      "version": "0.8.0",
-      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers. 30 skills, 2 agents and automatic prompt/result/stop/bash gates.",
+      "version": "0.8.1",
+      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers. 31 skills, 2 agents and automatic prompt/result/stop/bash gates.",
       "skills": [
         "add-without-breaking",
         "answer-briefly",
@@ -34,6 +34,7 @@
         "real-input-real-check",
         "recall-before-reinvent",
         "reference-first",
+        "route-by-situation",
         "safe-process-control",
         "solve-first",
         "speak-human",
@@ -51,8 +52,8 @@
     "ugot-writing": {
       "from": "ugot-writing-skills",
       "displayName": "UGOT Writing",
-      "version": "0.3.0",
-      "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads, and CriticMarkup evidence notes on every claim (criticmarkup). Explaining with pictures moved to ugot-mindset (visual-first).",
+      "version": "0.3.1",
+      "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads, and CriticMarkup evidence notes on every claim (criticmarkup). Explaining with pictures moved to ugot-mindset (visual-first). Working-copy skill runs with per-requirement CriticMarkup notes (skill-run).",
       "skills": [
         "korean-style-editor",
         "write-for-the-reader",
@@ -65,7 +66,8 @@
         "reels-ad-production"
       ],
       "local_skills": [
-        "criticmarkup"
+        "criticmarkup",
+        "skill-run"
       ]
     },
     "ugot-engineering-habits": {
@@ -142,6 +144,20 @@
         "CriticMarkup을 도입하면 우리 문서의 오류가 줄어들 것이라고 예상한다.\n",
         "CriticMarkup을 도입하면 우리 문서의 오류가 줄어들 것이라고 예상한다. {>>근거: 유형=제안; 출처=작성자 예상; 상태=미확인; 부족=도입 전후 문서 오류 비교; 한계=효과를 측정한 결과가 아니다<<}\n"
       ]
+    ],
+    "ugot-writing/skills/skill-run/SKILL.md": [
+      [
+        "\n---\n\n# 스킬 사본으로 작업 진행하기",
+        "\nprinciple: spec-first\n---\n\n# 스킬 사본으로 작업 진행하기"
+      ],
+      [
+        "[creator]: /home/tripleyoung/.ilhae/brain/agent/home/.codex/skills/.system/skill-creator/SKILL.md",
+        "[creator]: https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md"
+      ],
+      [
+        "--session-uri codex://threads/actual-thread-id",
+        "--session-uri <session uri>"
+      ]
     ]
   },
   "exclude_files": [
@@ -156,8 +172,8 @@
     "ugot-mindset/hooks/launch-gate.py": "c19615f199f059ae942d75a601da7b9b75eee4071993617a47cfea2383e96041",
     "ugot-mindset/hooks/mindset-gate.py": "e2e9b2b21545cd7f3889f1f976f08587390632d542a2bf55c32bdacc838adfbc",
     "ugot-mindset/hooks/research-gate.py": "436be1b08fd3df4c7c6d33fcfba41a548b3bf43d5154a0fb6eff3bff66a44c38",
-    "ugot-mindset/skills/answer-briefly/SKILL.md": "393845761f07ef55a834556b7990506f3c97f41ff523c87b6df57ccdf8f70894",
-    "ugot-mindset/skills/speak-human/SKILL.md": "8c1b693d1d50dd77716751623625de4a6b4b9a19f6cf87733b255710d8887228",
+    "ugot-mindset/skills/answer-briefly/SKILL.md": "cb9ce29ddcec6fdf112d5cf53af68c542f6ed6eb78eb12e2b0e48372db5e7b18",
+    "ugot-mindset/skills/speak-human/SKILL.md": "7d3a0bcd34b3399bfa6ebc6e1fa8f3a3aebd41eab5a97c93836c15ba62ab922f",
     "ugot-mindset/skills/multi-axis-thinking/SKILL.md": "294bdb6cbee4438358bcf34c17651a299f61f85e83b1322e075b74ceb9278116",
     "ugot-mindset/skills/fundamental-first/SKILL.md": "e0e6e2e4db4ccfed3d69ea44296567dc791249f649bea94dcbb6338a1be6d6d1",
     "ugot-mindset/skills/multi-ruler/SKILL.md": "ee14d4d9c161ead210ebb909bbc441e095e6cf1850459e25ed7e478ad9a3cc0b",
@@ -176,7 +192,8 @@
     "ugot-engineering-habits/skills/precheck-and-premortem/SKILL.md": "16ac3c6b90876063dbc049338ab875cc8368f6b02c935b797935cb5b56dab767",
     "ugot-engineering-habits/skills/use-fundamental-terms/SKILL.md": "79b1be14e5ba63af53f15f0aed9987ee1b3bb6bacccc87b7ba1948ea80415ce6",
     "ugot-engineering-habits/skills/incident-root-fix/SKILL.md": "4649003cd299849c9cb442672a48f25354af57ae773312f93087a381217134cd",
-    "ugot-mindset/skills/spec-first/SKILL.md": "db563a77dbe6804a65ffbf0fc1a72174fd3dd965c198ecb3f844a86ac70b471f"
+    "ugot-mindset/skills/spec-first/SKILL.md": "afc9cf50368060df40deb7eaedea98dce35763247e876598fb126daaab5b383a",
+    "ugot-mindset/skills/route-by-situation/SKILL.md": "d24af19ad47dc1bbd671af7b930ff2a4373749697d11d772a82d5c8119dc2d0d"
   },
   "strip_criticmarkup": true
 }

@@ -4,6 +4,7 @@ description: "정본 하나 — 도메인 무관(빌드 스크립트·레지스�
 principle: self
 contract:
   trigger: "새 스크립트·레시피·설정 파일·표·생성기를 '하나 더' 만들려는 순간; 'X를 재현 가능하게/조립' 요청"
+  trigger_when: ["tool_use:Write~file_path\": \"(?!/tmp/)[^\"]*\\.(py|sh|mjs|ts)\""]
   procedure: "정본이 있나 찾기(검색어 기록) → 있으면 그 위에 단계/옵션으로 확장 → 사본이 필요하면 생성물 + 드리프트 검사 → 없을 때만 새로 만들고 정본으로 등록"
   exit_check: "diff가 정본 1개의 확장이거나, 새 정본이 등록되고 같은 역할의 다른 파일이 없다"
   evidence: "확장된 정본의 diff, 또는 드리프트 검사 결과"

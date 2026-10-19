@@ -3,6 +3,7 @@ name: spec-first
 description: "요구를 처음에 ID로 박고 끝에 기계로 대조한다 — 일을 받으면 첫 도구 호출 전에 요구를 ID로 적고(작은 턴 `요구: R1..Rn`, 기능은 spec.md `FR-###`·`SC-###`), 산출물을 ID에 묶고, 끝에서는 ID마다 증거 또는 left_out(사유)을 대조한다(장부 도구·훅이 있으면 기계가, 없으면 마지막 보고의 대조표로). 일을 받는 순간, 사용자가 번호 목록으로 일을 줄 때, 스펙 키트 /tasks·/analyze, \"완료/다 됐다/통합했다\"를 말하기 전, \"누락 없지?\"에 켠다."
 contract:
   trigger: "일을 받는 순간(첫 도구 호출 전), 번호 목록으로 받은 일, 스펙 키트 /tasks·/analyze, \"완료\"를 말하기 전"
+  trigger_when: ["always"]
   procedure: "요구를 ID로 선언(R1..Rn / FR·SC) → 산출물을 ID에 묶음 → ID마다 met+증거 또는 left_out+사유를 남김 → 대조(장부 도구가 있으면 기계, 없으면 보고의 대조표) → 마지막 보고에 left_out을 그대로 밝힘"
   exit_check: "요구 ID마다 met(실존 증거) 또는 left_out(열거형 사유+이유)이 있고 요구 블록이 첫 도구 호출보다 앞선다; 스펙은 인용 없는 작업 0·작업 없는 ID 0"
   evidence: "요구 ID별 met/left_out 줄(장부 또는 보고의 대조표), 스펙이면 작업↔ID 대조 결과"

@@ -4,6 +4,7 @@ description: "진짜 입력·진짜 확인 — 도메인과 무관하게, 내가
 principle: self
 contract:
   trigger: "'된다/통과/해결/X.XX'를 말하기 전; 테스트·데이터·점수표를 내가 직접 만든 순간"
+  trigger_when: ["tool_use:Bash~\\b(pytest|unittest|playwright test|cargo test|npm test|pnpm test|bazel test)\\b"]
   procedure: "입력을 실제 것으로 바꾸고(공개 벤치·실제 파일·실제 요청) → 지표 옆에 실제 출력 표본을 직접 열어 보고 → 자기 제작 점수표는 '연기 시험'으로만 표기"
   exit_check: "주장마다 실제 입력의 출처와 열어 본 출력 표본(경로·캡처·인용)이 붙어 있다"
   evidence: "실제 출력 표본 파일/캡처, 공개 벤치 결과 파일"

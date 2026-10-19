@@ -8,12 +8,12 @@
     {
       "name": "ugot-mindset",
       "source": "./plugins/ugot-mindset",
-      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers. 30 skills, 2 agents and automatic prompt/result/stop/bash gates."
+      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers. 31 skills, 2 agents and automatic prompt/result/stop/bash gates."
     },
     {
       "name": "ugot-writing",
       "source": "./plugins/ugot-writing",
-      "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads, and CriticMarkup evidence notes on every claim (criticmarkup). Explaining with pictures moved to ugot-mindset (visual-first)."
+      "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads, and CriticMarkup evidence notes on every claim (criticmarkup). Explaining with pictures moved to ugot-mindset (visual-first). Working-copy skill runs with per-requirement CriticMarkup notes (skill-run)."
     },
     {
       "name": "ugot-engineering-habits",

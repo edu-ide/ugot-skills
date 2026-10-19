@@ -1,8 +1,8 @@
 {
   "name": "ugot-mindset",
   "displayName": "UGOT Mindset",
-  "version": "0.8.0",
-  "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers. 30 skills, 2 agents and automatic prompt/result/stop/bash gates.",
+  "version": "0.8.1",
+  "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers. 31 skills, 2 agents and automatic prompt/result/stop/bash gates.",
   "author": {
     "name": "UGOT"
   },

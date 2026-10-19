@@ -4,6 +4,7 @@ description: "더하되 깨지 않기 — 도메인 무관(모델 능력 추가,
 principle: self
 contract:
   trigger: "기존 체계에 새 능력·기능·규칙·설정을 더하려는 순간; '이걸 고치니 저게 깨짐'이 한 번이라도 나온 순간; 장치를 끄거나 길목 검사에 막힌 순간"
+  trigger_when: ["file_changed:*/skills/*/SKILL.md", "file_changed:*/hooks/*.py"]
   procedure: "기존 것의 기준값을 먼저 고정(회귀 묶음) → 새것을 격리된 자리에 추가 → 전체 회귀를 한 번에 → 깨지면 순차 재적용 대신 통합 설계로"
   exit_check: "변경 전후 전체 회귀 결과가 나란히 있고 기존 항목의 하락이 0이거나 선언(잃는 것·이유·되찾는 때 또는 못 되찾는 이유)으로 수용됐다"
   evidence: "전후 회귀 결과 파일/표"

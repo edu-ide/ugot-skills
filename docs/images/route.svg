@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="760" viewBox="0 0 1360 760" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <title>route-by-situation: 요청마다 경로를 먼저 정한다</title>
+  <desc>요청이 오면 기록을 읽고, 세 갈림길(기준 제품이 있나, 구조가 바뀌나, 외부 엔진을 들이나)과 단계를 판정해 "상황 → 스킬 경로" 한 줄을 답의 첫 줄로 쓴 뒤, 그 스킬을 실제로 켠다. 스킬 300개 중 그 순간 필요한 것을 놓치지 않기 위한 장치다.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="1360" height="760" fill="#FFFFFF"/>
+  <text x="680" y="54" text-anchor="middle" font-size="30" font-weight="600" fill="#2C2C2A">route-by-situation — 답하기 전에 경로부터</text>
+  <text x="680" y="88" text-anchor="middle" font-size="18" fill="#5F5E5A">스킬이 수백 개면 "그 순간 필요한 하나"를 놓친다. 그래서 매 요청의 첫 행동을 "어느 길인가"로 고정한다.</text>
+
+  <g font-size="21" font-weight="600" fill="#2C2C2A" text-anchor="middle">
+    <rect x="40" y="130" width="250" height="90" rx="14" fill="#F1EFE8" stroke="#888780"/>
+    <text x="165" y="168">1. 요청이 들어옴</text>
+    <text x="165" y="198" font-size="16" font-weight="400" fill="#5F5E5A">훅이 "경로부터" 한 줄을 넣음</text>
+
+    <rect x="330" y="130" width="250" height="90" rx="14" fill="#F1EFE8" stroke="#888780"/>
+    <text x="455" y="168">2. 기록부터 읽음</text>
+    <text x="455" y="198" font-size="16" font-weight="400" fill="#5F5E5A">결정 · 측정 · 열린 작업</text>
+
+    <rect x="620" y="130" width="250" height="90" rx="14" fill="#EEEDFE" stroke="#534AB7"/>
+    <text x="745" y="168" fill="#3C3489">3. 세 갈림길 판정</text>
+    <text x="745" y="198" font-size="16" font-weight="400" fill="#534AB7">아래 세 물음</text>
+
+    <rect x="910" y="130" width="250" height="90" rx="14" fill="#EEEDFE" stroke="#534AB7"/>
+    <text x="1035" y="168" fill="#3C3489">4. 단계 판정</text>
+    <text x="1035" y="198" font-size="16" font-weight="400" fill="#534AB7">스펙 · 설계 · 구현 · 버그 · 검증 · 기록</text>
+  </g>
+  <g stroke="#5F5E5A" stroke-width="2" marker-end="url(#a)">
+    <line x1="292" y1="175" x2="326" y2="175"/>
+    <line x1="582" y1="175" x2="616" y2="175"/>
+    <line x1="872" y1="175" x2="906" y2="175"/>
+    <line x1="1035" y1="222" x2="1035" y2="290"/>
+  </g>
+
+  <g font-size="18" fill="#3C3489">
+    <rect x="620" y="250" width="250" height="150" rx="12" fill="#FFFFFF" stroke="#534AB7" stroke-dasharray="6 4"/>
+    <text x="640" y="284">기준 제품·공개 구현이 있나?</text>
+    <text x="640" y="316" font-size="15" fill="#534AB7">→ 빼기 스펙 (무엇이 빠졌나)</text>
+    <text x="640" y="348">구조가 바뀌나?</text>
+    <text x="640" y="380" font-size="15" fill="#534AB7">→ 설계 턴 먼저</text>
+  </g>
+  <g font-size="18" fill="#3C3489">
+    <rect x="620" y="412" width="250" height="60" rx="12" fill="#FFFFFF" stroke="#534AB7" stroke-dasharray="6 4"/>
+    <text x="640" y="438">외부 엔진을 들이나?</text>
+    <text x="640" y="462" font-size="15" fill="#534AB7">→ 실측·수용 검사</text>
+  </g>
+
+  <g text-anchor="middle">
+    <rect x="730" y="292" width="610" height="120" rx="14" fill="#E1F5EE" stroke="#0F6E56"/>
+    <text x="1035" y="330" font-size="21" font-weight="600" fill="#085041">5. 답의 첫 줄 = "상황 → 스킬 경로"</text>
+    <text x="1035" y="362" font-size="16" fill="#0F6E56">예: 상황 → 스킬 경로: 외부 엔진 채택(검증 단계) → parity-spec · multi-ruler</text>
+    <text x="1035" y="390" font-size="16" fill="#0F6E56">경로에 적은 스킬은 언급이 아니라 실제로 켠다</text>
+  </g>
+  <line x1="1035" y1="414" x2="1035" y2="486" stroke="#5F5E5A" stroke-width="2" marker-end="url(#a)"/>
+
+  <g text-anchor="middle">
+    <rect x="730" y="490" width="610" height="110" rx="14" fill="#F1EFE8" stroke="#888780"/>
+    <text x="1035" y="526" font-size="21" font-weight="600" fill="#2C2C2A">6. 턴 끝에 대조</text>
+    <text x="1035" y="556" font-size="16" fill="#5F5E5A">경로에 적은 스킬마다 적용 증거 또는 건너뛴 이유 (해당없음 · 이미됨 · 측정없음 · 시간)</text>
+    <text x="1035" y="584" font-size="16" fill="#5F5E5A">내부판은 장부와 Stop 훅이 기계로 대조, 공개판은 마지막 보고가 그 역할</text>
+  </g>
+
+  <g font-size="17" fill="#444441">
+    <rect x="40" y="250" width="540" height="350" rx="14" fill="#FAECE7" stroke="#993C1D"/>
+    <text x="310" y="286" text-anchor="middle" font-size="20" font-weight="600" fill="#712B13">이 장치가 없을 때 실제로 난 일</text>
+    <text x="64" y="326" fill="#712B13">· 비교 질문에 표부터 내고 그림 스킬을 안 켬 (2026-10-17)</text>
+    <text x="64" y="358" fill="#712B13">· 기록에 이미 있는 스크립트를 다시 만듦</text>
+    <text x="64" y="390" fill="#712B13">· 구조가 바뀌는 일을 설계 없이 바로 구현</text>
+    <text x="64" y="422" fill="#712B13">· 외부 엔진을 들이면서 수용 검사 없이 교체</text>
+    <text x="64" y="470" font-size="16" fill="#993C1D">공통 원인: 스킬은 알고 있었지만 "그 순간"에 켜지지 않았다.</text>
+    <text x="64" y="500" font-size="16" fill="#993C1D">경로 줄은 그 판단을 답의 첫 행동으로 끌어올린다.</text>
+    <text x="64" y="548" font-size="16" fill="#993C1D">측정: 경로 줄을 매 요청 요구해도 첫 줄 준수는 15턴 중 8턴,</text>
+    <text x="64" y="576" font-size="16" fill="#993C1D">그래서 내부판은 실행 직전·턴 끝의 훅이 나머지를 받친다.</text>
+  </g>
+
+  <text x="680" y="700" text-anchor="middle" font-size="16" fill="#5F5E5A">단계별 후보 스킬 표는 route-by-situation 스킬 본문에 있다 (정본: 내부 마켓의 skill-graph.json에서 생성)</text>
+</svg>

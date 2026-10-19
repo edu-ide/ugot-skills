@@ -1,8 +1,8 @@
 {
   "name": "ugot-writing",
   "displayName": "UGOT Writing",
-  "version": "0.3.0",
-  "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads, and CriticMarkup evidence notes on every claim (criticmarkup). Explaining with pictures moved to ugot-mindset (visual-first).",
+  "version": "0.3.1",
+  "description": "Reader-first writing (mainly Korean): style editing, applications, songs and lyrics, story craft, short-form ads, and CriticMarkup evidence notes on every claim (criticmarkup). Explaining with pictures moved to ugot-mindset (visual-first). Working-copy skill runs with per-requirement CriticMarkup notes (skill-run).",
   "author": {
     "name": "UGOT"
   },
