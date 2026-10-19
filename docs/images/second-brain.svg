@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="560" viewBox="0 0 1360 560" font-family="Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <title>세컨드 브레인과 스킬의 순환</title>
+  <desc>에이전트의 한 작업은 기록을 먼저 읽고, 일하고, 결론을 되쓰고, 관계가 바뀌면 지도를 고치는 순환이다. 그 기록이 사는 곳이 UGOT Space이고, 세 스킬이 각 단계를 맡는다.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="1360" height="560" fill="#FFFFFF"/>
+  <text x="680" y="52" text-anchor="middle" font-size="30" font-weight="600" fill="#2C2C2A">세컨드 브레인과 스킬의 순환</text>
+  <text x="680" y="84" text-anchor="middle" font-size="18" fill="#5F5E5A">기록이 대화 밖에 남아야 "먼저 읽고, 되쓰고, 지도를 고친다"가 성립한다</text>
+
+  <!-- center: Space -->
+  <rect x="490" y="220" width="380" height="130" rx="18" fill="#EEEDFE" stroke="#534AB7"/>
+  <text x="680" y="262" text-anchor="middle" font-size="24" font-weight="600" fill="#3C3489">UGOT Space (세컨드 브레인)</text>
+  <text x="680" y="296" text-anchor="middle" font-size="17" fill="#534AB7">기억(Brain) · 업무 기록(Work) · 문서(Office)</text>
+  <text x="680" y="324" text-anchor="middle" font-size="15" fill="#534AB7">에이전트는 MCP 도구로 읽고 쓴다 · 사람은 앱에서 열어 본다</text>
+
+  <!-- four stages around -->
+  <g font-size="20" font-weight="600" text-anchor="middle">
+    <rect x="60" y="130" width="330" height="96" rx="14" fill="#E1F5EE" stroke="#0F6E56"/>
+    <text x="225" y="166" fill="#085041">1. 먼저 읽는다</text>
+    <text x="225" y="196" font-size="15" font-weight="400" fill="#0F6E56">이전 결정 · 측정 · 미완 작업 · 읽은 버전</text>
+
+    <rect x="970" y="130" width="330" height="96" rx="14" fill="#F1EFE8" stroke="#888780"/>
+    <text x="1135" y="166" fill="#2C2C2A">2. 일한다</text>
+    <text x="1135" y="196" font-size="15" font-weight="400" fill="#5F5E5A">경로 줄 → 스킬 → 산출물</text>
+
+    <rect x="970" y="350" width="330" height="96" rx="14" fill="#E1F5EE" stroke="#0F6E56"/>
+    <text x="1135" y="386" fill="#085041">3. 되쓴다</text>
+    <text x="1135" y="416" font-size="15" font-weight="400" fill="#0F6E56">결정 · 결과 · 교훈 · 산출물 ID</text>
+
+    <rect x="60" y="350" width="330" height="96" rx="14" fill="#E1F5EE" stroke="#0F6E56"/>
+    <text x="225" y="386" fill="#085041">4. 지도를 고친다</text>
+    <text x="225" y="416" font-size="15" font-weight="400" fill="#0F6E56">목표 · 결정 · 작업 · 자료 · 스킬의 관계</text>
+  </g>
+  <g stroke="#5F5E5A" stroke-width="2" fill="none" marker-end="url(#a)">
+    <path d="M392 178 L966 178"/>
+    <path d="M1135 228 L1135 346"/>
+    <path d="M968 398 L394 398"/>
+    <path d="M225 348 L225 230"/>
+  </g>
+  <!-- ties to Space -->
+  <g stroke="#534AB7" stroke-width="1.5" stroke-dasharray="6 4" fill="none">
+    <path d="M392 200 L488 240"/>
+    <path d="M968 376 L872 336"/>
+    <path d="M392 376 L488 336"/>
+  </g>
+
+  <!-- skill labels -->
+  <g font-size="15" fill="#085041" text-anchor="middle">
+    <text x="225" y="250">ugot-space-context · recall-before-reinvent</text>
+    <text x="1135" y="470">ugot-space-context · brain-cli · persist-everywhere</text>
+    <text x="225" y="470">manage-context-map</text>
+  </g>
+  <text x="1135" y="250" text-anchor="middle" font-size="15" fill="#5F5E5A">route-by-situation과 원칙 스킬 전부</text>
+
+  <text x="680" y="520" text-anchor="middle" font-size="16" fill="#5F5E5A">초록 세 칸의 스킬은 UGOT Space 플러그인과 함께 간다 · 이 저장소의 원칙은 기록이 어디에 있든 같은 순환을 요구한다</text>
+</svg>
