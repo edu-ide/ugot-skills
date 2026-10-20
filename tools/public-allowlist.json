@@ -7,7 +7,7 @@
     "ugot-mindset": {
       "from": "ugot-mindset",
       "displayName": "UGOT Mindset",
-      "version": "0.8.37",
+      "version": "0.8.38",
       "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers; seven pre-output decisions (persona, lens, sources, KPIs, 5W1H, format, constraints), shorten dated plans by harvesting what others already solved, persuade with the intent lineage. 42 skills, 2 agents and automatic prompt/result/stop/bash gates. 0.8.37: create-every-moment — every work turn hands the user a new idea (what · mechanism · prior · cheapest test), asked mid-turn and checked at Stop; 0.8.36: a self-diagnosed wrong direction with no corrective action in the turn is blocked once (noticing is an action); 0.8.35: notice-the-drift — a mid-turn noticing channel (drift-gate: the user's goal line + three questions every 8 tool calls or on a repository change); 0.8.34: a separate model judges every work turn at Stop (critic gate, no API key), every-means-now (urgency).",
       "skills": [
         "add-without-breaking",
