@@ -7,11 +7,12 @@
     "ugot-mindset": {
       "from": "ugot-mindset",
       "displayName": "UGOT Mindset",
-      "version": "0.8.36",
-      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers; seven pre-output decisions (persona, lens, sources, KPIs, 5W1H, format, constraints), shorten dated plans by harvesting what others already solved, persuade with the intent lineage. 41 skills, 2 agents and automatic prompt/result/stop/bash gates. 0.8.36: a self-diagnosed wrong direction with no corrective action in the turn is blocked once (noticing is an action); 0.8.35: notice-the-drift — a mid-turn noticing channel (drift-gate: the user's goal line + three questions every 8 tool calls or on a repository change); 0.8.34: a separate model judges every work turn at Stop (critic gate, no API key), every-means-now (urgency).",
+      "version": "0.8.37",
+      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers; seven pre-output decisions (persona, lens, sources, KPIs, 5W1H, format, constraints), shorten dated plans by harvesting what others already solved, persuade with the intent lineage. 42 skills, 2 agents and automatic prompt/result/stop/bash gates. 0.8.37: create-every-moment — every work turn hands the user a new idea (what · mechanism · prior · cheapest test), asked mid-turn and checked at Stop; 0.8.36: a self-diagnosed wrong direction with no corrective action in the turn is blocked once (noticing is an action); 0.8.35: notice-the-drift — a mid-turn noticing channel (drift-gate: the user's goal line + three questions every 8 tool calls or on a repository change); 0.8.34: a separate model judges every work turn at Stop (critic gate, no API key), every-means-now (urgency).",
       "skills": [
         "add-without-breaking",
         "blame-the-instrument-first",
+        "create-every-moment",
         "design-turn-first",
         "doubt-and-verify",
         "every-means-now",
@@ -242,7 +243,7 @@
     "ugot-engineering-habits/skills/use-fundamental-terms/SKILL.md": "79b1be14e5ba63af53f15f0aed9987ee1b3bb6bacccc87b7ba1948ea80415ce6",
     "ugot-engineering-habits/skills/incident-root-fix/SKILL.md": "8516134c1be5ec8dccecea59506b96c62468aa026057cd148ac0068c578732d4",
     "ugot-mindset/skills/spec-first/SKILL.md": "afc9cf50368060df40deb7eaedea98dce35763247e876598fb126daaab5b383a",
-    "ugot-mindset/skills/route-by-situation/SKILL.md": "de255b164402b38f4b5a859789b4cfc09ae7a90653e28813d40ab9dd3d4e9ae2"
+    "ugot-mindset/skills/route-by-situation/SKILL.md": "7b94f2f78050bac107b772405cecc3555328c6f94e786343250acabe3cfd9e31"
   },
   "strip_criticmarkup": true
 }

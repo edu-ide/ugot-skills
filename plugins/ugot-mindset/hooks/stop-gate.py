@@ -82,6 +82,34 @@ if not asked and (re.search(DEFER, body) or re.search(DRIFT, body)):
     elif not worked:
         reasons.append("[무-외상 게이트] '반은 아니다/나중에/다음 설계 카드'라고 말하면서 이 턴에 만든 것이 없다. 아닌 반은 지금 고쳐라: 구조 구멍이면 같은 턴에서 코드·카드로 만들고, 정말 물리적 취득 시간이나 순서 의존이면 그 이유를 한 줄로 적어라(스킬 keep-going·predictability-first; CLAUDE.md 무-외상 대전제).")
 
+# 0.8.37 — 창자 게이트 (2026-10-20 사용자 "너는 창자야 — 매 순간마다 새로운 아이디어를 내게"): 작업 턴(이 턴의 도구 호출 ≥ IDEA_MIN_TOOLS)의
+# 마지막 답에 '아이디어:' 줄이 없으면 한 번 되돌린다. IDEA_GATE_MODE=block(기본)|notice|off.
+IDEA_MODE = os.environ.get("IDEA_GATE_MODE", "block")
+if not asked and IDEA_MODE != "off" and not re.search(r"아이디어\s*[:：]", body):
+    ntools = 0
+    try:
+        with open(path, errors="ignore") as f:
+            lines = f.readlines()
+        for line in reversed(lines):
+            try:
+                d = json.loads(line)
+            except Exception:
+                continue
+            if d.get("type") == "user":
+                c = (d.get("message") or {}).get("content")
+                if isinstance(c, str) or (isinstance(c, list) and any(isinstance(x, dict) and x.get("type") == "text" for x in c)):
+                    break
+            if d.get("type") == "assistant":
+                c = (d.get("message") or {}).get("content") or []
+                ntools += sum(1 for x in c if isinstance(x, dict) and x.get("type") == "tool_use")
+    except Exception:
+        ntools = 0
+    if ntools >= int(os.environ.get("IDEA_MIN_TOOLS", "5") or 5):
+        msg = ("[창자 게이트] 작업 턴인데 마지막 답에 새 아이디어가 없다(스킬 create-every-moment). 네 생성기(구조/병명/이론/확장) 중 둘을 돌려 "
+               "'아이디어: 무엇 · 메커니즘 · 선례(없으면 없음(검색어 …)) · 시험(시간)' 한 줄을 넣고, 아이디어 장부(IDEA-LEDGER.md)에 추가하라. "
+               "물려받은 줄기의 재측정은 아이디어가 아니다.")
+        (reasons if IDEA_MODE == "block" else notices).append(msg)
+
 # 0.7.7 — 일정 커버리지 게이트 (Space 기능 커버리지): 날짜 있는 약속을 말했는데 일정 저장이 없으면 약속마다 한 번 되돌린다.
 try:
     import calendar_coverage
