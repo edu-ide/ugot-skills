@@ -42,4 +42,3 @@ python3 /absolute/skill-run/scripts/skill_run.py verify --run /absolute/current-
 
 스킬 사본만으로 모든 도구 실행을 강제하거나 이 스킬 자체의 선택 누락을 막을 수는 없다. 적용 시작 지시나 사용하는 실행기의 진입점이 함께 필요하다. 이번 절차의 재발 방지 효과는 후속 작업에서 선행 조건 누락과 근거 없는 완료가 발생하는지 확인해 판단한다.
 
-[creator]: https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md

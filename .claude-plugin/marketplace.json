@@ -8,7 +8,7 @@
     {
       "name": "ugot-mindset",
       "source": "./plugins/ugot-mindset",
-      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers. 31 skills, 2 agents and automatic prompt/result/stop/bash gates."
+      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers; seven pre-output decisions (persona, lens, sources, KPIs, 5W1H, format, constraints), shorten dated plans by harvesting what others already solved, persuade with the intent lineage. 39 skills, 2 agents and automatic prompt/result/stop/bash gates."
     },
     {
       "name": "ugot-writing",
@@ -18,7 +18,7 @@
     {
       "name": "ugot-engineering-habits",
       "source": "./plugins/ugot-engineering-habits",
-      "description": "Engineering habits for coding agents: build it right the first time, check the latest literature, disclose shortcuts, premortem before claims, use fundamental terms, consult on architecture, separate incident mitigation from the root fix."
+      "description": "Engineering habits for coding agents: build it right the first time, check the latest literature, disclose shortcuts, premortem before claims, use fundamental terms, consult on architecture, separate incident mitigation from the root fix; a mitigation (retry, rollback, backoff, raised limit) is closed only with the root fix in the same turn or an explicit stop."
     },
     {
       "name": "ugot-career",

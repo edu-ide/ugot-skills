@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# 0.8.33 review (2026-10-20): the private hook moved its gate table to prompt_gates.py and records route candidates in the internal skill
+# ledger; the public cut keeps these standalone regex gates (no ledger dependency).
 """UserPromptSubmit hook: when the prompt carries pressure / handoff / direction-choice signals, inject the
 근본론·방향-먼저 reminder so the mindset fires mechanically instead of relying on recall."""
 import json, re, sys

@@ -4,8 +4,10 @@ description: "Use when fixing a production or runtime failure — an error in lo
 contract:
   trigger: "런타임 장애(에러·500·데드락·타임아웃·크래시·flaky·누수·디스크)를 고칠 때, 재시도·슬립·한도 올리기를 손대려는 순간"
   procedure: "완화(mitigation)와 근본 수정(root fix) 구분 → 1차 출처에서 메커니즘 확인 → 실제 의존성에 재현 → 원인 제거, 완화는 안전망으로만"
-  exit_check: "변경이 완화/근본 중 어느 쪽인지 명시되고 실제 의존성 재현 기록이 있다"
-  evidence: "재현 명령·출력 + 원인 제거 diff"
+  exit_check: "변경이 완화/근본 중 어느 쪽인지 명시되고 실제 의존성 재현 기록이 있다; 완화(재시도·되감기·백오프·한도·스킵)를 넣은 턴에는 같은 턴에 근본 처방이 diff 또는 발사(카드)로 함께 있거나 사용자가 완화에서 멈추라고 말한 기록이 있다 — '내일/GPU가 비면/다음에'로 미루는 문장은 미충족"
+  evidence: "재현 명령·출력 + 원인 제거 diff (reply 인용으로는 닫히지 않는다)"
+  evidence_kind: action
+  trigger_when: ["reply~안전띠|안전망|완화일 뿐|원인은 그대로|원인은 못|GPU가 비면|내일 (오전|아침|하|재|측정)|다음에 (하|재)"]
 principle: fundamental-first
 ---
 

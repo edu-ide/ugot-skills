@@ -56,7 +56,7 @@ principle: self
 ## 형제 원칙
 
 - `visual-first`: 그리는 법(질문 모양 → 그림 모양, 도구). 이 원칙은 언제·무엇을·어디에 남길지를 정한다.
-- `answer-briefly`·`speak-human`: 그림 아래 글은 세 줄, 사람 말.
+- `visual-first`(글 칸, 옛 answer-briefly)·`speak-human`: 그림 아래 글은 세 줄, 사람 말.
 - `persist-everywhere`: 결정·교훈의 정본 저장.
 - `rsi-loop`: 이해 실패를 신호로 받아 이 원칙과 그림 규칙을 고친다.
 

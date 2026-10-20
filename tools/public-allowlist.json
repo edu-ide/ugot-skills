@@ -7,16 +7,18 @@
     "ugot-mindset": {
       "from": "ugot-mindset",
       "displayName": "UGOT Mindset",
-      "version": "0.8.1",
-      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers. 31 skills, 2 agents and automatic prompt/result/stop/bash gates.",
+      "version": "0.8.33",
+      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers; seven pre-output decisions (persona, lens, sources, KPIs, 5W1H, format, constraints), shorten dated plans by harvesting what others already solved, persuade with the intent lineage. 39 skills, 2 agents and automatic prompt/result/stop/bash gates.",
       "skills": [
         "add-without-breaking",
-        "answer-briefly",
         "blame-the-instrument-first",
         "design-turn-first",
         "doubt-and-verify",
+        "explain-the-intent",
         "faithful-first",
+        "five-w-one-h",
         "fundamental-first",
+        "harvest-to-shorten",
         "honest-eta",
         "human-understands",
         "improve-governing-rules",
@@ -27,6 +29,7 @@
         "no-waste",
         "one-source-of-truth",
         "persist-everywhere",
+        "pick-the-sources",
         "predictability-first",
         "pro-quality",
         "question-the-task-first",
@@ -36,6 +39,11 @@
         "reference-first",
         "route-by-situation",
         "safe-process-control",
+        "set-the-constraints",
+        "set-the-format",
+        "set-the-kpis",
+        "set-the-lens",
+        "set-the-persona",
         "solve-first",
         "speak-human",
         "spec-first",
@@ -73,8 +81,8 @@
     "ugot-engineering-habits": {
       "from": "ugot-dev-skills",
       "displayName": "UGOT Engineering Habits",
-      "version": "0.3.0",
-      "description": "Engineering habits for coding agents: build it right the first time, check the latest literature, disclose shortcuts, premortem before claims, use fundamental terms, consult on architecture, separate incident mitigation from the root fix.",
+      "version": "0.3.1",
+      "description": "Engineering habits for coding agents: build it right the first time, check the latest literature, disclose shortcuts, premortem before claims, use fundamental terms, consult on architecture, separate incident mitigation from the root fix; a mitigation (retry, rollback, backoff, raised limit) is closed only with the root fix in the same turn or an explicit stop.",
       "skills": [
         "architecture-consultation",
         "audit-convention-fit",
@@ -145,18 +153,58 @@
         "CriticMarkup을 도입하면 우리 문서의 오류가 줄어들 것이라고 예상한다. {>>근거: 유형=제안; 출처=작성자 예상; 상태=미확인; 부족=도입 전후 문서 오류 비교; 한계=효과를 측정한 결과가 아니다<<}\n"
       ]
     ],
-    "ugot-writing/skills/skill-run/SKILL.md": [
+    "ugot-mindset/skills/explain-the-intent/SKILL.md": [
       [
-        "\n---\n\n# 스킬 사본으로 작업 진행하기",
-        "\nprinciple: spec-first\n---\n\n# 스킬 사본으로 작업 진행하기"
+        "(C801)",
+        ""
       ],
       [
-        "[creator]: /home/tripleyoung/.ilhae/brain/agent/home/.codex/skills/.system/skill-creator/SKILL.md",
-        "[creator]: https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md"
+        "(C1637)",
+        ""
+      ]
+    ],
+    "ugot-mindset/skills/five-w-one-h/SKILL.md": [
+      [
+        "(C1637/C1638)",
+        ""
       ],
       [
-        "--session-uri codex://threads/actual-thread-id",
-        "--session-uri <session uri>"
+        "장부 C1628·",
+        "장부·"
+      ]
+    ],
+    "ugot-mindset/skills/harvest-to-shorten/SKILL.md": [
+      [
+        "(C917)",
+        ""
+      ]
+    ],
+    "ugot-mindset/skills/pick-the-sources/SKILL.md": [
+      [
+        "(C1639)",
+        ""
+      ]
+    ],
+    "ugot-mindset/skills/set-the-constraints/SKILL.md": [
+      [
+        "born-in-base의 ",
+        "우리 연구 원칙의 "
+      ]
+    ],
+    "ugot-mindset/skills/set-the-kpis/SKILL.md": [
+      [
+        "(44M, C1633)",
+        "(44M)"
+      ]
+    ],
+    "ugot-mindset/skills/set-the-lens/SKILL.md": [
+      [
+        "(C878·C885)",
+        ""
+      ],
+      [
+        "(C878/C885)",
+        ""
       ]
     ]
   },
@@ -170,16 +218,15 @@
   ],
   "overrides": {
     "ugot-mindset/hooks/launch-gate.py": "c19615f199f059ae942d75a601da7b9b75eee4071993617a47cfea2383e96041",
-    "ugot-mindset/hooks/mindset-gate.py": "e2e9b2b21545cd7f3889f1f976f08587390632d542a2bf55c32bdacc838adfbc",
+    "ugot-mindset/hooks/mindset-gate.py": "8a57b229dea3451de419885f5523f0021bf07e7cdc4f1728979799681b4b59bc",
     "ugot-mindset/hooks/research-gate.py": "436be1b08fd3df4c7c6d33fcfba41a548b3bf43d5154a0fb6eff3bff66a44c38",
-    "ugot-mindset/skills/answer-briefly/SKILL.md": "cb9ce29ddcec6fdf112d5cf53af68c542f6ed6eb78eb12e2b0e48372db5e7b18",
-    "ugot-mindset/skills/speak-human/SKILL.md": "7d3a0bcd34b3399bfa6ebc6e1fa8f3a3aebd41eab5a97c93836c15ba62ab922f",
-    "ugot-mindset/skills/multi-axis-thinking/SKILL.md": "294bdb6cbee4438358bcf34c17651a299f61f85e83b1322e075b74ceb9278116",
-    "ugot-mindset/skills/fundamental-first/SKILL.md": "e0e6e2e4db4ccfed3d69ea44296567dc791249f649bea94dcbb6338a1be6d6d1",
+    "ugot-mindset/skills/speak-human/SKILL.md": "d0bb737d8ec39f791dbdab4ead69d637ae1bfe8334bc4d4050512189164e3320",
+    "ugot-mindset/skills/multi-axis-thinking/SKILL.md": "71074b30b8d5929a3888797cf6b21786bbc3942cb9f9230a1bdd057649e6c128",
+    "ugot-mindset/skills/fundamental-first/SKILL.md": "183f167679666c8bede188f14598f42f21141eb7e584ad15a2f4392928c8d2c0",
     "ugot-mindset/skills/multi-ruler/SKILL.md": "ee14d4d9c161ead210ebb909bbc441e095e6cf1850459e25ed7e478ad9a3cc0b",
-    "ugot-mindset/skills/question-the-task-first/SKILL.md": "4d45aa08f9754ccdde231ba9f0c973484b28f4d5c6f5738ddd683b6ba6369ff6",
+    "ugot-mindset/skills/question-the-task-first/SKILL.md": "97485d307ac841693da07ad7978c6fedba0d3ea892f2f53a6e417e673cf6d9b1",
     "ugot-mindset/skills/persist-everywhere/SKILL.md": "ed9eac7df680f0b3660569595f517f2be51c77cc12fb563943bce2470f0f0552",
-    "ugot-mindset/skills/mistake-review/SKILL.md": "3655970d004dd633d155c9ad078c54c02e024a8f08c6d8439c340bc7db527066",
+    "ugot-mindset/skills/mistake-review/SKILL.md": "7cf707b372a39ada8871a8146e34febaa078b37267793b234ff7bb575ce4c045",
     "ugot-writing/skills/application-final-approval/SKILL.md": "24b4ab9a355cbcdc54ee8e37f0ec16f10959db236184cef79ed70c6fcd3b773c",
     "ugot-writing/skills/write-for-the-reader/SKILL.md": "133e0be4c0b172297ef0ec0e164b64539cf47c4f49528168a1cfb7a69bcb772e",
     "ugot-writing/skills/write-convention-breaking-lyrics/references/supplied-song-matrix.md": "4507d6e291afc3d2f2f76cc8a7a766d867305535d62eaa024cfb5dea08f1c904",
@@ -191,9 +238,9 @@
     "ugot-engineering-habits/skills/build-right-the-first-time/SKILL.md": "28e22f8d50b8e8484ad710bb34e355f8999d8bd6db565f9927f3d10528e8f9ad",
     "ugot-engineering-habits/skills/precheck-and-premortem/SKILL.md": "16ac3c6b90876063dbc049338ab875cc8368f6b02c935b797935cb5b56dab767",
     "ugot-engineering-habits/skills/use-fundamental-terms/SKILL.md": "79b1be14e5ba63af53f15f0aed9987ee1b3bb6bacccc87b7ba1948ea80415ce6",
-    "ugot-engineering-habits/skills/incident-root-fix/SKILL.md": "4649003cd299849c9cb442672a48f25354af57ae773312f93087a381217134cd",
+    "ugot-engineering-habits/skills/incident-root-fix/SKILL.md": "8516134c1be5ec8dccecea59506b96c62468aa026057cd148ac0068c578732d4",
     "ugot-mindset/skills/spec-first/SKILL.md": "afc9cf50368060df40deb7eaedea98dce35763247e876598fb126daaab5b383a",
-    "ugot-mindset/skills/route-by-situation/SKILL.md": "d24af19ad47dc1bbd671af7b930ff2a4373749697d11d772a82d5c8119dc2d0d"
+    "ugot-mindset/skills/route-by-situation/SKILL.md": "c8dba5a0e61ac55088f4c8c63aab7dfc2bde8241e90f31d58f92a7b11fc223aa"
   },
   "strip_criticmarkup": true
 }

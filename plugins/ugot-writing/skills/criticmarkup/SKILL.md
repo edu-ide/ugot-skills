@@ -2,6 +2,7 @@
 name: criticmarkup
 description: 설명용 Markdown과 자체 작성 스킬의 주장·규칙마다 CriticMarkup 주석으로 출처, 정확한 위치, 뒷받침 범위와 미확인 사항을 연결한다. 문서 작성·수정, 근거 보강, CriticMarkup 검수 요청에 사용한다.
 principle: doubt-and-verify
+principle: doubt-and-verify
 ---
 
 # CriticMarkup으로 근거 연결하기

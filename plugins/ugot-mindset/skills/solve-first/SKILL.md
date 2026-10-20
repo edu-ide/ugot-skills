@@ -8,6 +8,7 @@ contract:
   evidence: "사다리 표가 든 답/스펙, 스파이크 측정 파일, 포크 diff·상류 이슈 링크"
   failure_modes: [15]
   validator: ["reply_contains:사다리 || reply_contains:확장점"]
+  trigger_when: ["reply~못 고칩니다|못 합니다|불가능합니다|안 됩니다|할 수 없습니다|구조상 한계"]
 principle: self
 ---
 

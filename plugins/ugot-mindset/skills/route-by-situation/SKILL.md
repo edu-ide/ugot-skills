@@ -32,19 +32,19 @@ _생성 블록 — 정본은 내부 마켓의 `tools/skill-graph.json`(dev 흐�
 
 | 단계 | 물음·켜지는 순간 | 후보 스킬 |
 |---|---|---|
-| 0. 요청 받음 | 목표를 먼저 고정 — 첫 도구 호출 전에 요구를 ID로(요구: R1..Rn). 보고 요청≠중단 요청 | `route-by-situation` · `spec-first` · `question-the-task-first` · `read-the-intent` · `answer-briefly` · `speak-human` · `visual-first` · `human-understands` · `multi-axis-thinking` |
-| 1. 기록부터 | 목표·확정 결정·열린 작업·정본·스킬 관계 확인 · 문제 규칙은 개선안 제안 | `reference-first` · `improve-governing-rules` · `recall-before-reinvent` |
+| 0. 요청 받음 | 목표를 먼저 고정 — 첫 도구 호출 전에 요구를 ID로(요구: R1..Rn). 보고 요청≠중단 요청 | `route-by-situation` · `spec-first` · `question-the-task-first` · `read-the-intent` · `visual-first` · `speak-human` · `human-understands` · `multi-axis-thinking` · `set-the-persona` · `set-the-lens` · `set-the-kpis` · `five-w-one-h` · `set-the-format` · `set-the-constraints` |
+| 1. 기록부터 | 목표·확정 결정·열린 작업·정본·스킬 관계 확인 · 문제 규칙은 개선안 제안 | `reference-first` · `improve-governing-rules` · `recall-before-reinvent` · `pick-the-sources` |
 | 기준 제품·API·표준·공개 구현이 있나? | "X급·X 같은"이거나, 남의 모델·논문·저장소 구조를 이식하거나 다시 만들면 예 | — |
 | 2a. 빼기 스펙 | 대상 버전·카탈로그·gaps·축별 %·자 | — |
 | 2b. 기능 스펙 | 시나리오·요구사항만. 숫자 지어내지 않음 | `audit-convention-fit` · `use-fundamental-terms` |
 | 새 모듈·엔진 교체·책임 혼재·반복 작업을 줄일 구조 변경? | 하나라도 예면 설계 턴 | — |
-| 3. 설계 턴 | 소유권·의존·다음 변경→불변식→검사 설치→기능 | `design-turn-first` · `solve-first` · `architecture-consultation` · `model-real-cardinality` · `check-latest-literature` · `native-architecture-sprint` · `calibrated-architecture-research` |
+| 3. 설계 턴 | 소유권·의존·다음 변경→불변식→검사 설치→기능 | `design-turn-first` · `solve-first` · `architecture-consultation` · `model-real-cardinality` · `check-latest-literature` · `native-architecture-sprint` · `calibrated-architecture-research` · `harvest-to-shorten` · `explain-the-intent` |
 | 외부 엔진·라이브러리 채택? | Storytold처럼 가져올 때 | — |
 | 4. 실측·수용 검사 | 통과 포맷만 교체. 포크·rev 고정 | `predictability-first` · `build-right-the-first-time` |
 | 5. 구현 | 선택한 기능 완성. 설계한 소유자·처리 경로로 연결 | `add-without-breaking` · `one-source-of-truth` · `faithful-first` · `build-right-the-first-time` · `human-understands` · `keep-going` · `no-waste` · `safe-process-control` · `sprout-loop` |
 | 6. 버그·장애 | 왜 사슬→원인 ID→근본 해결→사고·장치 기록 | `incident-root-fix` · `fundamental-first` · `solve-first` |
 | 7. 검증 | 자 하나로 판정 금지. 직접 본 뒤 보고 | `blame-the-instrument-first` · `real-input-real-check` · `multi-ruler` · `pro-quality` · `doubt-and-verify` · `disclose-implementation-fidelity` · `precheck-and-premortem` |
-| 8. 완료 선언 전 | 요구 ID마다 met/left_out — 장부 게이트가 대조, 빠진 것은 보고에 밝힘 | `spec-first` · `mistake-review` · `human-understands` · `honest-eta` |
+| 8. 완료 선언 전 | 요구 ID마다 met/left_out — 장부 게이트가 대조, 빠진 것은 보고에 밝힘 | `spec-first` · `mistake-review` · `human-understands` · `honest-eta` · `explain-the-intent` |
 | 9. 기록 | 확정 결정→정본 갱신→Space·Work 연결→재조회 | `persist-everywhere` |
 <!-- skill-graph:dev end -->
 

@@ -18,6 +18,7 @@ contract:
   evidence: "진단 측정 명령·출력"
   failure_modes: [6, 13, 15]
   validator: ["tool_use:Bash", "reply_contains:우회 || reply_contains:근본"]
+  trigger_when: ["reply~우회|안전띠|안전망|완화일 뿐|band-aid|GPU가 비면|내일 (오전|아침|하|재|측정)"]
 principle: self
 ---
 

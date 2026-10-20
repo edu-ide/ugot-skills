@@ -19,7 +19,7 @@ principle: self
 4. **일차원 사고** → multi-axis-thinking
 5. **근본을 가진 채 잊음**(규칙이 그 순간 안 켜짐) → 훅이 답; 규칙 파일에 같은 문장
 6. **조급함**("느리다" = 더 빨리가 아니라 방향 의심) → 방향 게이트 훅, fundamental-first
-7. **말이 길고 기계적** → answer-briefly, speak-human, visual-first(구조·흐름·비교 설명은 그림 먼저, 비교표부터 내지 않기)
+7. **말이 길고 기계적** → visual-first(글 칸 = 옛 answer-briefly), speak-human, visual-first(구조·흐름·비교 설명은 그림 먼저, 비교표부터 내지 않기)
 8. **기록 먼저 안 읽고 재발명** → recall-before-reinvent, 기록 게이트 훅
 9. **검증 전 단언·말 바뀜·과장** → doubt-and-verify
 10. **권한 받고도 되묻기·질문으로 끝내기** → keep-going, 중단 게이트 훅(Stop)

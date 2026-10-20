@@ -61,7 +61,7 @@ principle: self
 
 ## 다른 스킬과의 관계
 
-- answer-briefly·speak-human은 **말의 형식**, 이 스킬은 **일의 범위**. 둘은 충돌하지 않는다: 말은 짧게, 일은 끝까지.
+- visual-first(글 칸, 옛 answer-briefly)·speak-human은 **말의 형식**, 이 스킬은 **일의 범위**. 둘은 충돌하지 않는다: 말은 짧게, 일은 끝까지.
 - multi-axis-thinking(목표·원리·증거·선행·대안·반증·비용)을 켠 채로 내는 '센스'가 이 스킬의 실체다. question-the-task-first가 "이 일이 맞는 일인가"를 묻는다면, 이 스킬은 "이 말이 뜻하는 일이 무엇인가"를 묻는다.
 
 ## 보내기 전 한 번
