@@ -7,6 +7,7 @@ contract:
   exit_check: "답에 '참고:' 줄이 있고, 각 항목이 실제 열어 본 출처(경로·링크·명령)이거나 '없음(검색어 …)'이다"
   evidence: "참고 줄이 든 답/문서, 또는 조사 노트 파일"
   failure_modes: [8, 13, 23]
+  trigger_when: ["always"]
   validator: ["reply_contains:참고:"]
 principle: self
 ---

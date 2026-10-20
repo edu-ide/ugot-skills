@@ -1,8 +1,8 @@
 {
   "name": "ugot-mindset",
   "displayName": "UGOT Mindset",
-  "version": "0.8.33",
-  "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers; seven pre-output decisions (persona, lens, sources, KPIs, 5W1H, format, constraints), shorten dated plans by harvesting what others already solved, persuade with the intent lineage. 39 skills, 2 agents and automatic prompt/result/stop/bash gates.",
+  "version": "0.8.34",
+  "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers; seven pre-output decisions (persona, lens, sources, KPIs, 5W1H, format, constraints), shorten dated plans by harvesting what others already solved, persuade with the intent lineage. 40 skills, 2 agents and automatic prompt/result/stop/bash gates. 0.8.34: a separate model judges every work turn at Stop (critic gate, no API key), report checks are notices, every-means-now (urgency: every means, in parallel, now).",
   "author": {
     "name": "UGOT"
   },

@@ -7,13 +7,14 @@
     "ugot-mindset": {
       "from": "ugot-mindset",
       "displayName": "UGOT Mindset",
-      "version": "0.8.33",
-      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers; seven pre-output decisions (persona, lens, sources, KPIs, 5W1H, format, constraints), shorten dated plans by harvesting what others already solved, persuade with the intent lineage. 39 skills, 2 agents and automatic prompt/result/stop/bash gates.",
+      "version": "0.8.34",
+      "description": "How the agent should think and talk with the user: read the intent, declare requirements before the first tool call, verify before claiming, picture first, blame the instrument before the result, solve before saying impossible, keep going, brief human answers; seven pre-output decisions (persona, lens, sources, KPIs, 5W1H, format, constraints), shorten dated plans by harvesting what others already solved, persuade with the intent lineage. 40 skills, 2 agents and automatic prompt/result/stop/bash gates. 0.8.34: a separate model judges every work turn at Stop (critic gate, no API key), report checks are notices, every-means-now (urgency: every means, in parallel, now).",
       "skills": [
         "add-without-breaking",
         "blame-the-instrument-first",
         "design-turn-first",
         "doubt-and-verify",
+        "every-means-now",
         "explain-the-intent",
         "faithful-first",
         "five-w-one-h",
@@ -240,7 +241,7 @@
     "ugot-engineering-habits/skills/use-fundamental-terms/SKILL.md": "79b1be14e5ba63af53f15f0aed9987ee1b3bb6bacccc87b7ba1948ea80415ce6",
     "ugot-engineering-habits/skills/incident-root-fix/SKILL.md": "8516134c1be5ec8dccecea59506b96c62468aa026057cd148ac0068c578732d4",
     "ugot-mindset/skills/spec-first/SKILL.md": "afc9cf50368060df40deb7eaedea98dce35763247e876598fb126daaab5b383a",
-    "ugot-mindset/skills/route-by-situation/SKILL.md": "c8dba5a0e61ac55088f4c8c63aab7dfc2bde8241e90f31d58f92a7b11fc223aa"
+    "ugot-mindset/skills/route-by-situation/SKILL.md": "baad6f3829ba5c1f79ecb5f98177bac59cb3dea5e247e442c0a0557e6dac547b"
   },
   "strip_criticmarkup": true
 }
